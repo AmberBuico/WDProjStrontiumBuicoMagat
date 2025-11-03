@@ -69,6 +69,9 @@ Our website aims to help users appreciate our campus spaces and nature by showca
 >- https://www.w3schools.com/jsref/jsref_filter.asp
 >- https://www.w3schools.com/jsref/prop_win_localstorage.asp
 
+## [7] Link to Wireframe
+> 
+
 
 
 
