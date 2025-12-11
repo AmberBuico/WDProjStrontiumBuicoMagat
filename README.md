@@ -81,7 +81,7 @@ Our website aims to help users appreciate our campus spaces and nature by showca
 ## [7] Link to Wireframe 
 > https://www.canva.com/design/DAG3n4AIU3M/AfDD1MxNDtfPy-LRmDnf1Q/edit?utm_content=DAG3n4AIU3M&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
-Warning ⚠️: Sir the design is like super duper tentative and not final and just full draft because we're looking for good color pallets but we can't seem to find something that will match the theme of our website---which is pisay and the corgi!
+Warning ⚠️: Sir the design is like super duper... not okay! But we'll fix it po, trust!
 
 ## [8] Favicon
 > <img src="corgi.png" alt="site icon" class="logo">
