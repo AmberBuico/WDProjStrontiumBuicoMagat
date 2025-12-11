@@ -84,7 +84,7 @@ Our website aims to help users appreciate our campus spaces and nature by showca
 Warning ⚠️: Sir the design is like super duper tentative and not final and just full draft because we're looking for good color pallets but we can't seem to find something that will match the theme of our website---which is pisay and the corgi!
 
 ## [8] Favicon
-> C:\Users\asus\Quarter2Project67\WDProjStrontiumBuicoMagat\public\corgi.png
+> ![C:\Users\asus\Quarter2Project67\WDProjStrontiumBuicoMagat\public\corgi.png](https://vscode.dev/github/AmberBuico/WDProjStrontiumBuicoMagat/blob/main/public/corgi.png)
 
 
 
