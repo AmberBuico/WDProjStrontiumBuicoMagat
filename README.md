@@ -84,7 +84,7 @@ Our website aims to help users appreciate our campus spaces and nature by showca
 Warning ⚠️: Sir the design is like super duper... not okay! But we'll fix it po, trust!
 
 ## [8] Favicon
-> <img src="corgi.png" alt="site icon" class="logo">
+> <img src="azra.png" alt="site icon" class="logo">
 
 
 
