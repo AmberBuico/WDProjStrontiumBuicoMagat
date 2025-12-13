@@ -31,7 +31,7 @@ Our website aims to help users appreciate our campus spaces and nature by showca
 ### 2. **Tambayan Maps**
 - Directory
 - Acts as the main feature of the website where users can explore the tambayan categories
-- Each category has a box with images and short descriptions.
+- Each category has a box with images.
 - Clicking on a box opens a detailed view of that tambayan with photos, descriptions, and short fun facts.
 
 ### 3. **Lakbay with Azra**
