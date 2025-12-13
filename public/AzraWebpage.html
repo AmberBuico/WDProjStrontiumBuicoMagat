@@ -3,386 +3,224 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Azra The 67th Explorer - Make sama with Azra!</title>
+    <title>azra</title>
+
     <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text x=%2250%%22 y=%2290%%22 style=%22font-size:80px; text-anchor:middle;%22>🐶</text></svg>">
-    
-    <!-- Google Fonts: Balsamiq Sans -->
+    <link rel="icon" type="image/png" href="azra.png">
+
+    <!-- Fonts: Balsamiq Sans (Default), Gloria Hallelujah (Titles), Delius (IreneFlorentina substitute for long text) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&family=Gloria+Hallelujah&family=Delius&display=swap" rel="stylesheet">
+  
+    <!-- External CSS -->
+  <link rel="stylesheet" href="AzraWebpage.css">
 
-    <style>
-        /* --- General Styling --- */
-        body {
-            font-family: 'Balsamiq Sans', cursive;
-            background-color: #EAE6F0; /* Light Purple/Lavender Background */
-            color: #2c3e50; /* Dark text */
-            margin: 0;
-            padding-top: 100px; /* Space for fixed header */
-            scroll-behavior: smooth;
-            /* Hide overflow to prevent scroll bar from appearing when menu is closed */
-            overflow-x: hidden; 
-        }
-
-        /* --- Header/Navigation Bar --- */
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 20px;
-            box-sizing: border-box;
-            z-index: 50;
-        }
-
-        /* Style for the bordered boxes (Miffy look) */
-        .azra-box {
-            border: 4px solid #2c3e50;
-            border-radius: 20px;
-            box-shadow: 6px 6px 0px 0px #2c3e50;
-            background-color: #F0E6D8; /* Cream/Off-white */
-            transition: all 0.2s;
-        }
-
-        /* --- Azra Logo in Header --- */
-        .header-logo {
-            display: flex;
-            align-items: center;
-            padding: 5px 10px;
-            background-color: rgba(255, 192, 105, 0.5); /* Semi-transparent accent */
-        }
-        .header-logo h1 {
-            font-size: 24px;
-            font-weight: 900;
-            text-transform: uppercase;
-            margin-left: 8px;
-        }
-
-        /* --- Menu Toggle Button (Dog House) --- */
-        #menu-toggle {
-            cursor: pointer;
-            width: 50px;
-            height: 50px;
-            padding: 5px;
-            background-color: white;
-        }
-        #menu-toggle:hover {
-            transform: scale(1.1);
-        }
-        #menu-toggle img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        /* --- Main Content --- */
-        .main-container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 20px;
-            text-align: center;
-        }
-
-        /* --- Corgi Section --- */
-        .corgi-section {
-            padding: 40px 0;
-        }
-        .corgi-img {
-            width: 300px;
-            height: auto;
-            margin: 0 auto;
-            display: block;
-            transition: transform 0.3s ease;
-        }
-
-        /* --- 1. Corgi Hover Animation (Simplified) --- */
-        /* Use a class toggle in JS for the wiggle effect to keep CSS simpler */
-        @keyframes corgi-wiggle {
-            0% { transform: scale(1.05) translateX(-5px); }
-            50% { transform: scale(1.05) translateX(5px); }
-            100% { transform: scale(1.05) translateX(-5px); }
-        }
-        .corgi-wiggle {
-            animation: corgi-wiggle 0.5s infinite alternate;
-        }
-
-        .corgi-section h2 {
-            font-size: 60px;
-            font-weight: 900;
-            margin-top: 10px;
-            text-transform: uppercase;
-        }
-        .corgi-section p {
-            font-size: 20px;
-            margin-top: 5px;
-            font-weight: 400;
-        }
-
-        /* --- Tambayan Grid --- */
-        .tambayan-grid {
-            margin-top: 40px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 30px;
-            padding-bottom: 50px;
-        }
-
-        /* --- 2. Icon Card Hover (Simplified Scale) --- */
-        .icon-card {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 20px;
-            cursor: pointer;
-            text-decoration: none;
-            color: #2c3e50;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .icon-card:hover {
-            transform: scale(1.1); /* Simple scaling */
-            box-shadow: 8px 8px 0px 0px #FFC069; /* Simple accent shadow */
-        }
-        .icon-card img {
-            width: 80px;
-            height: 80px;
-            object-fit: contain;
-            margin-bottom: 10px;
-        }
-        .icon-card span {
-            font-size: 18px;
-            font-weight: 700;
-        }
-
-        /* --- 3. Menu Sidebar Styling (Simpler CSS) --- */
-        #side-menu {
-            position: fixed;
-            top: 0;
-            right: 0;
-            width: 300px;
-            height: 100%;
-            background-color: #55526C; /* Dark background */
-            transform: translateX(300px); /* Off-screen by default */
-            transition: transform 0.3s ease-in-out;
-            z-index: 100;
-            border-left: 4px solid #2c3e50;
-            box-sizing: border-box;
-        }
-
-        .menu-content {
-            padding: 40px 20px;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .menu-links {
-            margin-top: 60px;
-        }
-        .menu-links a {
-            display: block;
-            color: white;
-            font-size: 28px;
-            text-decoration: none;
-            padding: 10px 0;
-            transition: color 0.15s, text-decoration 0.15s, font-weight 0.15s;
-        }
-
-        /* --- Menu Link Hover (Underline and Bold) --- */
-        .menu-links a:hover {
-            font-weight: bold;
-            text-decoration: underline;
-            color: #FFC069; /* Accent color on hover */
-        }
-
-        /* --- Menu Backdrop --- */
-        #menu-backdrop {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 90;
-            display: none;
-        }
-    </style>
 </head>
 <body>
 
-    <!-- Header and Dog House Menu Toggle -->
-    <header class="header">
-        
-        <!-- Left Section: Azra Logo and Text -->
-        <div class="header-logo azra-box">
-            <!-- Simplified Corgi Face Icon (for the header) -->
-            <span style="font-size: 24px;">🐶</span>
-            <h1>azra</h1>
+    <!-- Floating top bar (appears when scrolling) -->
+    <div class="top-bar bg-color-default" id="scroll-header">
+        <div class="top-left">
+            <img src="azra.png" class="top-icon" onerror="this.onerror=null;this.src='https://placehold.co/55x55/E6B09E/000000?text=A'">
+            <span class="top-title">azra</span>
+        </div>
+        <img src="menubar.png" class="top-menu" id="top-menu-icon" onerror="this.onerror=null;this.src='https://placehold.co/60x60/E6B09E/000000?text=☰'">
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+
+        <img src="flower.png" class="corner flower" onerror="this.onerror=null;this.src='https://placehold.co/120x120/FFC069/000000?text=FLOWER'">
+        <img src="menubar.png" class="corner menu" id="corner-menu-icon" onerror="this.onerror=null;this.src='https://placehold.co/70x70/E6B09E/000000?text=☰'">
+
+        <div class="hero-center" id="hero-center-content">
+            <img 
+                src="logo.png" 
+                class="logo" 
+                onerror="this.onerror=null;this.src='https://placehold.co/350x200/E6B09E/000000?text=CORGI+LOGO'"
+                alt="Azra Corgi Logo"
+            >
+            <!-- Only tagline.png remains, and its size is increased via CSS -->
+            <div class="tagline-container">
+                <img 
+                    src="tagline.png" 
+                    class="tagline-image" 
+                    onerror="this.onerror=null;this.src='https://placehold.co/300x70/E6B09E/000000?text=azra+TITLE'"
+                    alt="azra title"
+                >
+            </div>
         </div>
 
-        <!-- Right Section: Dog House Menu Toggle -->
-        <!-- Image Path for Doghouse: assets/doghouse.png -->
-        <div id="menu-toggle" class="azra-box">
-            <img src="assets/doghouse.png" onerror="this.onerror=null;this.src='https://placehold.co/50x50/FFC069/000000?text=🏠';" alt="Menu Toggle">
-        </div>
-    </header>
+    </section>
 
-    <!-- Main Content: Home Page -->
-    <main class="main-container">
-
-        <!-- Central Corgi Logo and Tagline -->
-        <section class="corgi-section" id="corgi-logo-container">
-            <!-- Corgi Image (The requested hover effects are applied via JS/CSS class toggle) -->
-            <!-- Image Path for Corgi: assets/azra.png -->
-            <img id="corgi-image" src="assets/azra.png" onerror="this.onerror=null;this.src='https://placehold.co/300x200/E6B09E/000000?text=AZRA+THE+CORGI';" alt="Azra The Corgi Logo" class="corgi-img">
+    <!-- Directory Grid Container -->
+    <div class="grid-container">
+        <section class="grid">
             
-            <h2>a z r a</h2>
-            <p>
-                Make sama with Azra in exploring Pisay’s most iconic hangout places!
-            </p>
-        </section>
-
-        <!-- Tambayan Category Grid -->
-        <section class="tambayan-grid">
+            <!-- ROW 1 (4 items - Full row) -->
+            <div class="card"><img src="kalachuchi.png" alt="Peach Flower Box" onerror="this.onerror=null;this.src='https://placehold.co/250x250/fbd7c4/000000?text=Flower'"></div>
+            <div class="card"><img src="grandstand.png" alt="Pink Grandstand Box" onerror="this.onerror=null;this.src='https://placehold.co/250x250/f2a4ab/000000?text=Stairs'"></div>
+            <div class="card"><img src="library.png" alt="Magenta Capybara Box" onerror="this.onerror=null;this.src='https://placehold.co/250x250/cc95a6/000000?text=Capybara'"></div>
+            <div class="card"><img src="gazebos.png" alt="Purple Gazebo Box" onerror="this.onerror=null;this.src='https://placehold.co/250x250/aaa3b2/000000?text=Purple+Table'"></div>
             
-            <!-- Icon Card 1: Nature -->
-            <a href="#maps" class="icon-card azra-box">
-                <!-- Image Path: assets/flower.png -->
-                <img src="assets/flower.png" onerror="this.onerror=null;this.src='https://placehold.co/100x100/FF99AA/000000?text=Flower';" alt="Flower Icon">
-                <span>Nature!</span>
-            </a>
-
-            <!-- Icon Card 2: A/C -->
-            <a href="#maps" class="icon-card azra-box">
-                <!-- Image Path: assets/aircon.png -->
-                <img src="assets/aircon.png" onerror="this.onerror=null;this.src='https://placehold.co/100x100/A7C5E8/000000?text=AC';" alt="Aircon Icon">
-                <span>Aircon!</span>
-            </a>
-
-            <!-- Icon Card 3: Study Spots (Capybara) -->
-            <a href="#maps" class="icon-card azra-box">
-                <!-- Image Path: assets/capybara.png -->
-                <img src="assets/capybara.png" onerror="this.onerror=null;this.src='https://placehold.co/100x100/FFC069/000000?text=Study';" alt="Capybara Icon">
-                <span>Study Spots</span>
-            </a>
-
-            <!-- Icon Card 4: Architecture (Block/Building) -->
-            <a href="#maps" class="icon-card azra-box">
-                <!-- Image Path: assets/block.png -->
-                <img src="assets/block.png" onerror="this.onerror=null;this.src='https://placehold.co/100x100/55526C/ffffff?text=Block';" alt="Block Icon">
-                <span>Architecture</span>
-            </a>
-
-            <!-- Icon Card 5: Social (Takoyaki Stand) -->
-            <a href="#maps" class="icon-card azra-box">
-                <!-- Image Path: assets/takoyaki.png -->
-                <img src="assets/takoyaki.png" onerror="this.onerror=null;this.src='https://placehold.co/100x100/FF99AA/000000?text=Social';" alt="Takoyaki Icon">
-                <span>Social Hubs</span>
-            </a>
-
-            <!-- Icon Card 6: Games (Chessboard/Dice) -->
-            <a href="#maps" class="icon-card azra-box">
-                <!-- Image Path: assets/games.png -->
-                <img src="assets/games.png" onerror="this.onerror=null;this.src='https://placehold.co/100x100/A7C5E8/000000?text=Games';" alt="Games Icon">
-                <span>Chill & Play</span>
-            </a>
+            <!-- ROW 2 (3 items - CENTERING: start in column 2, span 1 column each) -->
+            <div class="card row-center-3-first span-col-1"><img src="gcu.png" alt="Rectangular Board Games Box" onerror="this.onerror=null;this.src='https://placehold.co/250x250/6a879e/ffffff?text=Games'"></div>
+            <div class="card span-col-1"><img src="registrar.png" alt="Peach Smiley AC Seats Box" onerror="this.onerror=null;this.src='https://placehold.co/250x250/fbd7c4/000000?text=AC+Seats'"></div>
+            <div class="card span-col-1"><img src="josiesnook.png" alt="Rectangular Pink Couch Box" onerror="this.onerror=null;this.src='https://placehold.co/250x250/f2a4ab/000000?text=Couch'"></div>
+            
+            <!-- ROW 3 (3 items - CENTERING: start in column 2, span 1 column each) -->
+            <div class="card row-center-3-first span-col-1"><img src="astb.png" alt="Magenta Fan/Chairs Box" onerror="this.onerror=null;this.src='https://placehold.co/250x250/cc95a6/000000?text=Dining'"></div>
+            <div class="card span-col-1"><img src="swings.png" alt="Rectangular Purple Swing Box" onerror="this.onerror=null;this.src='https://placehold.co/250x250/aaa3b2/000000?text=Swings'"></div>
+            <div class="card span-col-1"><img src="basketball.png" alt="Blue Basketball Hoop Box" onerror="this.onerror=null;this.src='https://placehold.co/250x250/6a879e/ffffff?text=Basketball'"></div>
+            
+            <!-- ROW 4 (2 items - CENTERING: start in column 2, span 1 column each) -->
+            <!-- The centering classes are updated to ensure two 1:1 cards are centered in the 4-column grid. -->
+            <div class="card row-center-2-first span-col-1"><img src="flob.png" alt="Rectangular Pink Picnic Table" onerror="this.onerror=null;this.src='https://placehold.co/250x250/fbd7c4/000000?text=Picnic+1'"></div>
+            <div class="card span-col-1"><img src="blob.png" alt="Rectangular Peach Food Stalls" onerror="this.onerror=null;this.src='https://placehold.co/250x250/f2a4ab/000000?text=Picnic+2'"></div>
             
         </section>
+    </div>
 
-    </main>
-
-    <!-- Menu Sidebar Panel -->
-    <div id="side-menu">
+    <!-- Menu Overlay Structure (New) -->
+    <div id="menu-overlay" class="menu-overlay">
         <div class="menu-content">
-            <!-- Menu Links -->
+            <button class="menu-close" id="menu-close-button">X</button>
+
+            <!-- Main Menu Links (UPDATED) -->
             <nav class="menu-links">
-                <!-- All links point to the home page for now, as per instruction -->
-                <a href="#home" data-page="home">azra's home</a>
-                <a href="#about" data-page="about">about azra</a>
-                <a href="#lakbay" data-page="lakbay">lakbay with azra</a>
-                <a href="#maps-aircon" data-page="maps">aircon!</a>
-                <a href="#maps-nature" data-page="maps">nature!</a>
-                <a href="#student-central" data-page="other">student central</a>
-                <a href="#behind" data-page="behind">behind the making</a>
-                <a href="#pasasalamat" data-page="pasasalamat">pasasalamat</a>
+                <a href="#" class="menu-link-item">azra’s home</a>
+                <a href="#about-azra" class="menu-link-item">about azra</a>
+                <a href="#lakbay-with-azra" class="menu-link-item">lakbay with azra</a>
+                <a href="#behind-the-making" class="menu-link-item">behind the making</a>
+                <a href="#pasasalamat" class="menu-link-item">pasasalamat</a>
+                <!-- href="#" scrolls to the top of the page, acting as the home link -->
+                <a href="#aircon" class="menu-link-item">aircon!</a>
+                <a href="#nature" class="menu-link-item">nature!</a>
+                <a href="#student-central" class="menu-link-item">student central</a>
             </nav>
 
-            <!-- Social Media Icons -->
-            <div style="display: flex; gap: 15px; font-size: 24px;">
-                <a href="#" style="color: white; text-decoration: none;">📘</a>
-                <a href="#" style="color: white; text-decoration: none;">📸</a>
-                <a href="#" style="color: white; text-decoration: none;">🎧</a>
-                <a href="#" style="color: white; text-decoration: none;">🎵</a>
+            <!-- Social Media Logos -->
+            <div class="socmeds-container">
+                <img 
+                    src="socmeds.png" 
+                    alt="Social Media Links" 
+                    class="socmeds-image" 
+                    onerror="this.onerror=null;this.src='https://placehold.co/250x60/F0F8FF/000000?text=Social+Links'"
+                >
             </div>
         </div>
     </div>
-    
-    <!-- Backdrop for closing the menu when clicking outside -->
-    <div id="menu-backdrop"></div>
+
 
     <script>
-        // Core JavaScript for the Menu Toggle functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            var menuToggle = document.getElementById('menu-toggle');
-            var sideMenu = document.getElementById('side-menu');
-            var menuBackdrop = document.getElementById('menu-backdrop');
-            var corgiImage = document.getElementById('corgi-image');
-            var corgiContainer = document.getElementById('corgi-logo-container');
-            
-            // --- Menu Functions (Simplified JS) ---
-            function openMenu() {
-                sideMenu.style.transform = 'translateX(0)';
-                menuBackdrop.style.display = 'block';
-                document.body.style.overflowY = 'hidden'; // Stop scrolling
-            }
+        // JAVASCRIPT LOGIC
+        document.addEventListener('DOMContentLoaded', () => {
+            const topBar = document.getElementById('scroll-header');
+            const heroCenter = document.getElementById('hero-center-content');
+            const flower = document.querySelector('.flower');
+            const body = document.body;
 
-            function closeMenu() {
-                sideMenu.style.transform = 'translateX(300px)';
-                menuBackdrop.style.display = 'none';
-                document.body.style.overflowY = 'scroll'; // Allow scrolling again
-            }
+            // --- Menu Bar Elements (New) ---
+            const menuOverlay = document.getElementById('menu-overlay');
+            const menuCloseButton = document.getElementById('menu-close-button');
+            const topMenuIcon = document.getElementById('top-menu-icon');
+            const cornerMenuIcon = document.getElementById('corner-menu-icon');
 
-            // --- Menu Toggle Listener ---
-            menuToggle.addEventListener('click', function() {
-                // Check if the menu is visible (open)
-                if (sideMenu.style.transform === 'translateX(0px)') {
-                    closeMenu();
+
+            // --- Menu Open/Close Logic (New) ---
+            const toggleMenu = () => {
+                const isOpen = menuOverlay.classList.toggle('open');
+                body.classList.toggle('menu-open', isOpen);
+                
+                // Hide or show scroll bar on body depending on menu state for dimming effect
+                if (isOpen) {
+                    body.style.overflow = 'hidden';
                 } else {
-                    openMenu();
+                    body.style.overflow = '';
                 }
-            });
+            };
+            
+            // 1. Attach listeners to open the menu
+            if (topMenuIcon) {
+                topMenuIcon.addEventListener('click', toggleMenu);
+            }
+            if (cornerMenuIcon) {
+                cornerMenuIcon.addEventListener('click', toggleMenu);
+            }
 
-            // --- Backdrop Click to Close ---
-            menuBackdrop.addEventListener('click', closeMenu);
-
-            // --- Menu Link Click to Close (and navigate) ---
-            var menuLinks = document.querySelectorAll('.menu-links a');
-            menuLinks.forEach(function(link) {
-                link.addEventListener('click', function(e) {
-                    closeMenu();
-                    
-                    // The instruction requires 'azra's home' to link to the homepage.
-                    if (link.dataset.page === 'home') {
-                        e.preventDefault();
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
+            // 2. Attach listener to close the menu
+            if (menuCloseButton) {
+                menuCloseButton.addEventListener('click', toggleMenu);
+            }
+            
+            // 3. Close menu when clicking the dimming background area
+            if (menuOverlay) {
+                menuOverlay.addEventListener('click', (e) => {
+                    if (e.target === menuOverlay) {
+                        toggleMenu();
                     }
                 });
+            }
+
+            // 4. Close menu when a link inside the menu is clicked (good UX)
+            document.querySelectorAll('.menu-link-item').forEach(link => {
+                link.addEventListener('click', toggleMenu);
             });
 
-            // --- Corgi Hover Effect (using JS for class toggle, referencing CSS animation) ---
-            corgiContainer.addEventListener('mouseenter', function() {
-                corgiImage.classList.add('corgi-wiggle');
-            });
 
-            corgiContainer.addEventListener('mouseleave', function() {
-                corgiImage.classList.remove('corgi-wiggle');
-            });
+            // --- Flower Hover Logic for Dynamic Background (Existing) ---
+            // List of new background color classes
+            const colorClasses = ['bg-color-1', 'bg-color-2', 'bg-color-3', 'bg-color-4', 'bg-color-5'];
+            let currentColorIndex = -1; // Start before the first color
+
+            const applyNewColor = () => {
+                // Remove all previous color classes from the body and top bar
+                colorClasses.forEach(cls => {
+                    body.classList.remove(cls);
+                    topBar.classList.remove(cls);
+                });
+                topBar.classList.remove('bg-color-default'); // Remove default class from the top bar
+
+                // Cycle to the next index (0 through 4)
+                currentColorIndex = (currentColorIndex + 1) % colorClasses.length;
+                const newClass = colorClasses[currentColorIndex];
+
+                // Apply the new background color class to both elements
+                body.classList.add(newClass);
+                topBar.classList.add(newClass);
+            };
+
+            if (flower) {
+                // When the flower is hovered over (mouseenter), change the colors.
+                flower.addEventListener('mouseenter', applyNewColor); 
+            }
+            
+            // --- Header Visibility Logic (Existing) ---
+            
+            const observerOptions = {
+                root: null, // Watch the whole screen
+                rootMargin: '0px 0px 0px 0px', 
+                threshold: 0.0 // Pop out when the Corgi scrolls out of view
+            };
+
+            const observerCallback = (entries, observer) => {
+                entries.forEach(entry => {
+                    // If the Corgi part is visible on the screen, hide the header.
+                    if (entry.isIntersecting) {
+                        topBar.classList.remove('visible');
+                    } else {
+                        // If the Corgi part is scrolled away, show the header.
+                        topBar.classList.add('visible');
+                    }
+                });
+            };
+
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+            if (heroCenter) {
+                observer.observe(heroCenter);
+            }
         });
     </script>
 </body>
