@@ -17,7 +17,7 @@
 - **Favicon:** simplified corgi face (just ears + eyes + nose) inside a 64×64 px square.
 
 ## [4] Website Description
-**Tambayan Trails** is a friendly, minimal guide to the best tambayan places around Pisay Main Campus.  We highlight outdoor hangout spots, short descriptions, photos, and tips that will be perfect for freshies, laterals, visitors, or anyone who wants a peaceful place to relax while in the campus.
+**Azra The 67th Explorer** is a friendly, minimal guide to the best tambayan places around Pisay Main Campus.  We highlight outdoor hangout spots, short descriptions, photos, and tips that will be perfect for freshies, laterals, visitors, or anyone who wants a peaceful place to relax while in the campus.
 
 Our website aims to help users appreciate our campus spaces and nature by showcasing each tambayan with **simple illustrations, quick facts, and a map**.  It’s easy to use mobile-friendly, and full of **cute animations** to match the cheerful vibe.
 
