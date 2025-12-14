@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&family=Gloria+Hallelujah&family=Delius&display=swap" rel="stylesheet">
   
     <!-- External CSS -->
-  <link rel="stylesheet" href="AzraWebpage.css">
+  <link rel="stylesheet" href="AzraHomepage.css">
 
 </head>
 <body>
@@ -54,33 +54,32 @@
 
     </section>
 
-    <!-- Directory Grid Container -->
-    <div class="grid-container">
-        <section class="grid">
-            
-            <!-- ROW 1 (4 items - Full row) -->
-            <div class="card"><img src="kalachuchi.png" alt="Peach Flower Box" onerror="this.onerror=null;this.src='https://placehold.co/250x250/fbd7c4/000000?text=Flower'"></div>
-            <div class="card"><img src="grandstand.png" alt="Pink Grandstand Box" onerror="this.onerror=null;this.src='https://placehold.co/250x250/f2a4ab/000000?text=Stairs'"></div>
-            <div class="card"><img src="library.png" alt="Magenta Capybara Box" onerror="this.onerror=null;this.src='https://placehold.co/250x250/cc95a6/000000?text=Capybara'"></div>
-            <div class="card"><img src="gazebos.png" alt="Purple Gazebo Box" onerror="this.onerror=null;this.src='https://placehold.co/250x250/aaa3b2/000000?text=Purple+Table'"></div>
-            
-            <!-- ROW 2 (3 items - CENTERING: start in column 2, span 1 column each) -->
-            <div class="card row-center-3-first span-col-1"><img src="gcu.png" alt="Rectangular Board Games Box" onerror="this.onerror=null;this.src='https://placehold.co/250x250/6a879e/ffffff?text=Games'"></div>
-            <div class="card span-col-1"><img src="registrar.png" alt="Peach Smiley AC Seats Box" onerror="this.onerror=null;this.src='https://placehold.co/250x250/fbd7c4/000000?text=AC+Seats'"></div>
-            <div class="card span-col-1"><img src="josiesnook.png" alt="Rectangular Pink Couch Box" onerror="this.onerror=null;this.src='https://placehold.co/250x250/f2a4ab/000000?text=Couch'"></div>
-            
-            <!-- ROW 3 (3 items - CENTERING: start in column 2, span 1 column each) -->
-            <div class="card row-center-3-first span-col-1"><img src="astb.png" alt="Magenta Fan/Chairs Box" onerror="this.onerror=null;this.src='https://placehold.co/250x250/cc95a6/000000?text=Dining'"></div>
-            <div class="card span-col-1"><img src="swings.png" alt="Rectangular Purple Swing Box" onerror="this.onerror=null;this.src='https://placehold.co/250x250/aaa3b2/000000?text=Swings'"></div>
-            <div class="card span-col-1"><img src="basketball.png" alt="Blue Basketball Hoop Box" onerror="this.onerror=null;this.src='https://placehold.co/250x250/6a879e/ffffff?text=Basketball'"></div>
-            
-            <!-- ROW 4 (2 items - CENTERING: start in column 2, span 1 column each) -->
-            <!-- The centering classes are updated to ensure two 1:1 cards are centered in the 4-column grid. -->
-            <div class="card row-center-2-first span-col-1"><img src="flob.png" alt="Rectangular Pink Picnic Table" onerror="this.onerror=null;this.src='https://placehold.co/250x250/fbd7c4/000000?text=Picnic+1'"></div>
-            <div class="card span-col-1"><img src="blob.png" alt="Rectangular Peach Food Stalls" onerror="this.onerror=null;this.src='https://placehold.co/250x250/f2a4ab/000000?text=Picnic+2'"></div>
-            
-        </section>
-    </div>
+   <!-- DIRECTORY GRID -->
+  <div class="grid-container">
+  <section class="grid">
+
+    <!-- ROW 1 (4 squares) -->
+    <div class="card"><img src="kalachuchi.png"></div>
+    <div class="card"><img src="grandstand.png"></div>
+    <div class="card"><img src="library.png"></div>
+    <div class="card"><img src="gazebos.png"></div>
+
+    <!-- ROW 2 -->
+    <div class="card span-2"><img src="gcu.png"></div>
+    <div class="card"><img src="registrar.png"></div>
+    <div class="card"><img src="josiesnook.png"></div>
+
+    <!-- ROW 3 -->
+    <div class="card"><img src="astb.png"></div>
+    <div class="card span-2"><img src="swings.png"></div>
+    <div class="card"><img src="basketball.png"></div>
+
+    <!-- ROW 4 (CENTERED RECTANGLES) -->
+    <div class="card span-2 center-row"><img src="flob.png"></div>
+    <div class="card span-2 center-row"><img src="blob.png"></div>
+
+  </section>
+</div>
 
     <!-- Menu Overlay Structure (New) -->
     <div id="menu-overlay" class="menu-overlay">
@@ -90,7 +89,7 @@
             <!-- Main Menu Links (UPDATED) -->
             <nav class="menu-links">
                 <a href="#" class="menu-link-item">azra’s home</a>
-                <a href="#about-azra" class="menu-link-item">about azra</a>
+                <a href="AzraAboutpage.html" class="menu-link-item">about azra</a>
                 <a href="#lakbay-with-azra" class="menu-link-item">lakbay with azra</a>
                 <a href="#behind-the-making" class="menu-link-item">behind the making</a>
                 <a href="#pasasalamat" class="menu-link-item">pasasalamat</a>

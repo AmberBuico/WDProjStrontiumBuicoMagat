@@ -300,55 +300,44 @@ body {
             max-width: 1200px;
             width: 95%;
             margin: 0 auto;
-            padding: 0 0 50px 0;
+            padding-bottom: 30px;
         }
 
         .grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-            padding: 10px 0;
+            gap: 8px;
         }
 
         .card {
             width: 100%;
-            aspect-ratio: 1 / 1;
-            height: auto;
-            border-radius: 15px;
+            height: 240px; /* BIGGER like Miffy */
+            border-radius: 18px;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: transform 0.3s;
-            background-color: transparent;
-            border: none;
-            box-shadow: none;
+            background: transparent;
             cursor: pointer;
+            transition: transform 0.3s ease;
             overflow: hidden;
         }
-        
-        .card.span-col-1 {
-            grid-column: span 1;
-        }
-        
-        .card.row-center-3-first {
-            grid-column-start: 2;
-        }
-        
-        .card.row-center-2-first {
-             grid-column-start: 2;
+
+        .card.span-2 {
+        grid-column: span 2;
         }
 
         .card img {
-            max-width: 90%;
-            max-height: 90%;
-            object-fit: contain;
-            width: auto;
-            height: auto;
+            max-width: 95%;
+            max-height: 95%;
+                object-fit: contain;
         }
 
         .card:hover {
-            transform: scale(1.03);
-            box-shadow: none;
+                transform: scale(1.03);
+        }
+
+        .center-row {
+            justify-self: center;
         }
 
 
@@ -384,13 +373,7 @@ body {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 8px;
             }
-            
-            /* Reset all centering/spanning logic for mobile (2 columns) */
-            .card.row-center-3-first,
-            .card.row-center-2-first,
-            .card.span-col-1,
-            .card.span-col-2 {
-                grid-column-start: auto;
-                grid-column: span 1;
+            .card.span-2 {
+                grid-column: span 2;
             }
         }
