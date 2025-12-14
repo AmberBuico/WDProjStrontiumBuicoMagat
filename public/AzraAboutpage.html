@@ -124,14 +124,11 @@
         const topBar = document.getElementById('scroll-header');
         const body = document.body;
 
-        // --- Menu Bar Elements ---
         const menuOverlay = document.getElementById('menu-overlay');
         const menuCloseButton = document.getElementById('menu-close-button');
         const topMenuIcon = document.getElementById('top-menu-icon');
         const cornerMenuIcon = document.getElementById('corner-menu-icon');
 
-
-        // --- Menu Open/Close Logic ---
         const toggleMenu = () => {
             const isOpen = menuOverlay.classList.toggle('open');
             body.classList.toggle('menu-open', isOpen);
@@ -166,12 +163,8 @@
             link.addEventListener('click', toggleMenu);
         });
 
-
-        // --- Header Visibility Logic for immediate scroll ---
         const headerSection = document.querySelector('.header-section');
-        // To calculate the height of the initial non-sticky header area
         const headerHeightToPass = headerSection ? headerSection.offsetHeight : 150; 
-        
         const checkScroll = () => {
 
             if (window.scrollY > headerHeightToPass) {
@@ -181,7 +174,6 @@
             }
         };
 
-      
             checkScroll(); 
             window.addEventListener('scroll', checkScroll);
 

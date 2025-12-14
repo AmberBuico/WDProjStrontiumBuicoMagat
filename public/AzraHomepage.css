@@ -6,7 +6,6 @@ body {
             scroll-behavior: smooth;
             transition: background-color 0.5s ease;
         }
-
         
         body.menu-open {
             overflow: hidden; 
@@ -15,7 +14,6 @@ body {
         .top-title {
             font-family: 'Gloria Hallelujah', cursive;
         }
-        
         
         .bg-color-1 { background-color: #fbd7c4 !important; }
         .bg-color-2 { background-color: #f2a4ab !important; }
@@ -78,7 +76,6 @@ body {
             transform: scale(1.1); 
         }
 
-
         .hero {
             position: relative;
             height: 450px;
@@ -92,7 +89,6 @@ body {
             position: absolute;
         }
 
-
         .flower {
             top: 30px;
             left: 30px;
@@ -100,12 +96,10 @@ body {
             cursor: pointer;
             transition: transform 0.3s;
         }
-        
        
         .flower:hover {
             transform: scale(1.2);
         }
-
        
         .menu {
             top: 30px;
@@ -128,7 +122,6 @@ body {
             margin-top: -30px;
         }
 
-        
         .logo {
             width: 350px;
             height: auto; 
@@ -139,7 +132,6 @@ body {
             animation: wiggle 0.6s;
             transform: scale(1.15);
         }
-
         
         .tagline-container {
             display: flex;
@@ -148,15 +140,12 @@ body {
             margin-top: 0px;
             gap: 5px;
         }
-        
     
         .tagline-image {
             width: 300px;
             height: auto;
             margin-top: 10px;
         }
-
-
         
         @keyframes wiggle {
             0% { transform: rotate(0deg); }
@@ -165,7 +154,6 @@ body {
             75% { transform: rotate(5deg); }
             100% { transform: rotate(0deg); }
         }
-
         
         .menu-overlay {
             position: fixed;
@@ -183,7 +171,6 @@ body {
             justify-content: flex-end; 
         }
 
-        
         .menu-overlay.open {
             opacity: 1;
             visibility: visible;
@@ -226,7 +213,6 @@ body {
             transform: rotate(90deg) scale(1.1);
             color: #f2a4ab;
         }
-
        
         .menu-links {
             display: flex;
@@ -246,7 +232,6 @@ body {
             border-radius: 10px;
             white-space: nowrap; 
         }
-        
        
         @media (max-width: 480px) {
             .menu-link-item {
@@ -254,13 +239,11 @@ body {
             }
         }
 
-
         .menu-link-item:hover {
             color: #2c3e50;
             transform: scale(1.05);
             background-color: rgba(255, 255, 255, 0.5);
         }
-
        
         .socmeds-container {
             margin-bottom: 50px;
@@ -321,40 +304,29 @@ body {
             justify-self: center;
         }
 
-
+        a.card {
+            text-decoration: none; 
+            color: inherit; 
+            display: flex; 
+        }
 
         @media (max-width: 768px) {
             .top-bar { padding: 15px 20px; }
             .top-icon { width: 40px; }
             .top-title { font-size: 1.2rem; }
             .top-menu { width: 45px; }
-
             .flower { width: 90px; }
             .menu { width: 40px; }
-
             .hero { height: 350px; padding-top: 30px;}
             .logo { width: 70vw; max-width: 250px; }
-            
             .tagline-container { gap: 2px; }
             .tagline-image { width: 200px; }
-
-          
-            .menu-content {
-                max-width: 80%;
-            }
-            .menu-link-item {
-                font-size: 1.1rem; 
-            }
-            .socmeds-image {
-                width: 180px;
-            }
-
-           
+            .menu-content { max-width: 80%; }
+            .menu-link-item { font-size: 1.1rem; }
+            .socmeds-image { width: 180px }
             .grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 8px;
             }
-            .card.span-2 {
-                grid-column: span 2;
-            }
+            .card.span-2 { grid-column: span 2;}
         }

@@ -5,21 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>azra</title>
 
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="azra.png">
 
-    <!-- Fonts: Balsamiq Sans (Default), Gloria Hallelujah (Titles), Delius (IreneFlorentina substitute for long text) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&family=Gloria+Hallelujah&family=Delius&display=swap" rel="stylesheet">
   
-    <!-- External CSS -->
   <link rel="stylesheet" href="AzraHomepage.css">
 
 </head>
 <body>
 
-    <!-- Floating top bar -->
     <div class="top-bar bg-color-default" id="scroll-header">
         <div class="top-left">
             <img src="azra.png" class="top-icon" onerror="this.onerror=null;this.src='https://placehold.co/55x55/E6B09E/000000?text=A'">
@@ -28,7 +24,6 @@
         <img src="menubar.png" class="top-menu" id="top-menu-icon" onerror="this.onerror=null;this.src='https://placehold.co/60x60/E6B09E/000000?text=☰'">
     </div>
 
-    <!-- Section -->
     <section class="hero">
 
         <img src="flower.png" class="corner flower" onerror="this.onerror=null;this.src='https://placehold.co/120x120/FFC069/000000?text=FLOWER'">
@@ -53,39 +48,37 @@
 
     </section>
 
-   <!-- DIRECTORY GRID -->
   <div class="grid-container">
-  <section class="grid">
+    <section class="grid">
 
-    <!-- ROW 1 -->
-    <div class="card"><img src="kalachuchi.png"></div>
-    <div class="card"><img src="grandstand.png"></div>
-    <div class="card"><img src="library.png"></div>
-    <div class="card"><img src="gazebos.png"></div>
+        <a href="AzraKalachuchi.html" class="card">
+            <img src="kalachuchi.png">
+        </a>
+        
+        <div class="card"><img src="grandstand.png"></div>
+        <div class="card"><img src="library.png"></div>
+        <div class="card"><img src="gazebos.png"></div>
 
-    <!-- ROW 2 -->
-    <div class="card span-2"><img src="gcu.png"></div>
-    <div class="card"><img src="registrar.png"></div>
-    <div class="card"><img src="josiesnook.png"></div>
+        <div class="card span-2"><img src="gcu.png"></div>
+        <div class="card"><img src="registrar.png"></div>
+        <a href="AzraJosiesNook.html" class="card">
+            <img src="josiesnook.png">
+        </a>
 
-    <!-- ROW 3 -->
-    <div class="card"><img src="astb.png"></div>
-    <div class="card span-2"><img src="swings.png"></div>
-    <div class="card"><img src="basketball.png"></div>
+        <div class="card"><img src="astb.png"></div>
+        <div class="card span-2"><img src="swings.png"></div>
+        <div class="card"><img src="basketball.png"></div>
 
-    <!-- ROW 4 -->
-    <div class="card span-2 center-row"><img src="flob.png"></div>
-    <div class="card span-2 center-row"><img src="blob.png"></div>
+        <div class="card span-2 center-row"><img src="flob.png"></div>
+        <div class="card span-2 center-row"><img src="blob.png"></div>
 
-  </section>
+    </section>
 </div>
 
-    <!-- Menu Overlay Structure -->
     <div id="menu-overlay" class="menu-overlay">
         <div class="menu-content">
             <button class="menu-close" id="menu-close-button">X</button>
 
-            <!-- Main Menu Links -->
             <nav class="menu-links">
                 <a href="#" class="menu-link-item">azra’s home</a>
                 <a href="AzraAboutpage.html" class="menu-link-item">about azra</a>
@@ -97,7 +90,6 @@
                 <a href="#student-central" class="menu-link-item">student central</a>
             </nav>
 
-            <!-- Social Media Logos -->
             <div class="socmeds-container">
                 <img 
                     src="socmeds.png" 
@@ -111,26 +103,21 @@
 
 
     <script>
-        // JAVASCRIPT LOGIC
         document.addEventListener('DOMContentLoaded', () => {
             const topBar = document.getElementById('scroll-header');
             const heroCenter = document.getElementById('hero-center-content');
             const flower = document.querySelector('.flower');
             const body = document.body;
 
-            // Menu Bar Elements 
             const menuOverlay = document.getElementById('menu-overlay');
             const menuCloseButton = document.getElementById('menu-close-button');
             const topMenuIcon = document.getElementById('top-menu-icon');
             const cornerMenuIcon = document.getElementById('corner-menu-icon');
 
-
-            // Menu Open/Close Logic
             const toggleMenu = () => {
                 const isOpen = menuOverlay.classList.toggle('open');
                 body.classList.toggle('menu-open', isOpen);
                 
-                // Hide or show scroll bar on body depending on menu state for dimming effect
                 if (isOpen) {
                     body.style.overflow = 'hidden';
                 } else {
@@ -138,7 +125,6 @@
                 }
             };
             
-            // Attach listeners to open the menu
             if (topMenuIcon) {
                 topMenuIcon.addEventListener('click', toggleMenu);
             }
@@ -146,12 +132,10 @@
                 cornerMenuIcon.addEventListener('click', toggleMenu);
             }
 
-            // Attach listener to close the menu
             if (menuCloseButton) {
                 menuCloseButton.addEventListener('click', toggleMenu);
             }
-            
-            // Close menu when clicking the dimming background area
+
             if (menuOverlay) {
                 menuOverlay.addEventListener('click', (e) => {
                     if (e.target === menuOverlay) {
@@ -160,14 +144,10 @@
                 });
             }
 
-            // Close menu when a link inside the menu is clicked 
             document.querySelectorAll('.menu-link-item').forEach(link => {
                 link.addEventListener('click', toggleMenu);
             });
 
-
-            // Flower Hover Logic for Dynamic Background 
-            // List of new background color classes
             const colorClasses = ['bg-color-1', 'bg-color-2', 'bg-color-3', 'bg-color-4', 'bg-color-5'];
             let currentColorIndex = -1;   
             
@@ -191,8 +171,6 @@
             if (flower) {
                 flower.addEventListener('mouseenter', applyNewColor); 
             }
-            
-            // Header Visibility Logic 
             
             const observerOptions = {
                 root: null, 
