@@ -19,7 +19,7 @@
 </head>
 <body>
 
-    <!-- Floating top bar (appears when scrolling) -->
+    <!-- Floating top bar -->
     <div class="top-bar bg-color-default" id="scroll-header">
         <div class="top-left">
             <img src="azra.png" class="top-icon" onerror="this.onerror=null;this.src='https://placehold.co/55x55/E6B09E/000000?text=A'">
@@ -28,7 +28,7 @@
         <img src="menubar.png" class="top-menu" id="top-menu-icon" onerror="this.onerror=null;this.src='https://placehold.co/60x60/E6B09E/000000?text=☰'">
     </div>
 
-    <!-- Hero Section -->
+    <!-- Section -->
     <section class="hero">
 
         <img src="flower.png" class="corner flower" onerror="this.onerror=null;this.src='https://placehold.co/120x120/FFC069/000000?text=FLOWER'">
@@ -41,7 +41,6 @@
                 onerror="this.onerror=null;this.src='https://placehold.co/350x200/E6B09E/000000?text=CORGI+LOGO'"
                 alt="Azra Corgi Logo"
             >
-            <!-- Only tagline.png remains, and its size is increased via CSS -->
             <div class="tagline-container">
                 <img 
                     src="tagline.png" 
@@ -58,7 +57,7 @@
   <div class="grid-container">
   <section class="grid">
 
-    <!-- ROW 1 (4 squares) -->
+    <!-- ROW 1 -->
     <div class="card"><img src="kalachuchi.png"></div>
     <div class="card"><img src="grandstand.png"></div>
     <div class="card"><img src="library.png"></div>
@@ -74,26 +73,25 @@
     <div class="card span-2"><img src="swings.png"></div>
     <div class="card"><img src="basketball.png"></div>
 
-    <!-- ROW 4 (CENTERED RECTANGLES) -->
+    <!-- ROW 4 -->
     <div class="card span-2 center-row"><img src="flob.png"></div>
     <div class="card span-2 center-row"><img src="blob.png"></div>
 
   </section>
 </div>
 
-    <!-- Menu Overlay Structure (New) -->
+    <!-- Menu Overlay Structure -->
     <div id="menu-overlay" class="menu-overlay">
         <div class="menu-content">
             <button class="menu-close" id="menu-close-button">X</button>
 
-            <!-- Main Menu Links (UPDATED) -->
+            <!-- Main Menu Links -->
             <nav class="menu-links">
                 <a href="#" class="menu-link-item">azra’s home</a>
                 <a href="AzraAboutpage.html" class="menu-link-item">about azra</a>
                 <a href="#lakbay-with-azra" class="menu-link-item">lakbay with azra</a>
                 <a href="#behind-the-making" class="menu-link-item">behind the making</a>
                 <a href="#pasasalamat" class="menu-link-item">pasasalamat</a>
-                <!-- href="#" scrolls to the top of the page, acting as the home link -->
                 <a href="#aircon" class="menu-link-item">aircon!</a>
                 <a href="#nature" class="menu-link-item">nature!</a>
                 <a href="#student-central" class="menu-link-item">student central</a>
@@ -120,14 +118,14 @@
             const flower = document.querySelector('.flower');
             const body = document.body;
 
-            // --- Menu Bar Elements (New) ---
+            // Menu Bar Elements 
             const menuOverlay = document.getElementById('menu-overlay');
             const menuCloseButton = document.getElementById('menu-close-button');
             const topMenuIcon = document.getElementById('top-menu-icon');
             const cornerMenuIcon = document.getElementById('corner-menu-icon');
 
 
-            // --- Menu Open/Close Logic (New) ---
+            // Menu Open/Close Logic
             const toggleMenu = () => {
                 const isOpen = menuOverlay.classList.toggle('open');
                 body.classList.toggle('menu-open', isOpen);
@@ -140,7 +138,7 @@
                 }
             };
             
-            // 1. Attach listeners to open the menu
+            // Attach listeners to open the menu
             if (topMenuIcon) {
                 topMenuIcon.addEventListener('click', toggleMenu);
             }
@@ -148,12 +146,12 @@
                 cornerMenuIcon.addEventListener('click', toggleMenu);
             }
 
-            // 2. Attach listener to close the menu
+            // Attach listener to close the menu
             if (menuCloseButton) {
                 menuCloseButton.addEventListener('click', toggleMenu);
             }
             
-            // 3. Close menu when clicking the dimming background area
+            // Close menu when clicking the dimming background area
             if (menuOverlay) {
                 menuOverlay.addEventListener('click', (e) => {
                     if (e.target === menuOverlay) {
@@ -162,54 +160,54 @@
                 });
             }
 
-            // 4. Close menu when a link inside the menu is clicked (good UX)
+            // Close menu when a link inside the menu is clicked 
             document.querySelectorAll('.menu-link-item').forEach(link => {
                 link.addEventListener('click', toggleMenu);
             });
 
 
-            // --- Flower Hover Logic for Dynamic Background (Existing) ---
+            // Flower Hover Logic for Dynamic Background 
             // List of new background color classes
             const colorClasses = ['bg-color-1', 'bg-color-2', 'bg-color-3', 'bg-color-4', 'bg-color-5'];
-            let currentColorIndex = -1; // Start before the first color
-
+            let currentColorIndex = -1;   
+            
             const applyNewColor = () => {
-                // Remove all previous color classes from the body and top bar
+                
                 colorClasses.forEach(cls => {
                     body.classList.remove(cls);
                     topBar.classList.remove(cls);
                 });
-                topBar.classList.remove('bg-color-default'); // Remove default class from the top bar
+                topBar.classList.remove('bg-color-default'); 
 
-                // Cycle to the next index (0 through 4)
+                
                 currentColorIndex = (currentColorIndex + 1) % colorClasses.length;
                 const newClass = colorClasses[currentColorIndex];
 
-                // Apply the new background color class to both elements
+                
                 body.classList.add(newClass);
                 topBar.classList.add(newClass);
             };
 
             if (flower) {
-                // When the flower is hovered over (mouseenter), change the colors.
                 flower.addEventListener('mouseenter', applyNewColor); 
             }
             
-            // --- Header Visibility Logic (Existing) ---
+            // Header Visibility Logic 
             
             const observerOptions = {
-                root: null, // Watch the whole screen
+                root: null, 
                 rootMargin: '0px 0px 0px 0px', 
-                threshold: 0.0 // Pop out when the Corgi scrolls out of view
+                threshold: 0.0 
             };
 
             const observerCallback = (entries, observer) => {
                 entries.forEach(entry => {
-                    // If the Corgi part is visible on the screen, hide the header.
+                    
                     if (entry.isIntersecting) {
                         topBar.classList.remove('visible');
-                    } else {
-                        // If the Corgi part is scrolled away, show the header.
+                    } 
+                    
+                    else {
                         topBar.classList.add('visible');
                     }
                 });

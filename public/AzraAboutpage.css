@@ -1,32 +1,26 @@
 body {
     margin: 0;
     font-family: 'Balsamiq Sans', cursive; 
-    background-color: #eadef7; /* Required Background Color */
+    background-color: #eadef7; 
     color: #2c3e50;
     scroll-behavior: smooth;
     transition: background-color 0.5s ease;
 }
 
-/* Dimming Effect for the Body when menu is open (Reused from your CSS) */
+
 body.menu-open {
     overflow: hidden; 
 }
 
 
-/* ========================================
- * FIXED & STICKY HEADER STYLES
- * ======================================== */
-
-/* --- ALWAYS VISIBLE TOP HEADER --- */
-.header-section {
-    position: relative; /* Not fixed, just for the first part of the page */
+    .header-section {
+    position: relative; 
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 50px 0 50px; /* Padding for the top section */
-    /* This section is where the azra icon and doghouse are initially placed */
-    margin-bottom: 30px; /* Space between header and the main image */
-}
+    padding: 30px 50px 0 50px; 
+    margin-bottom: 30px; 
+    }
 
 .header-left {
     display: flex;
@@ -35,19 +29,19 @@ body.menu-open {
 }
 
 .azra-icon {
-    width: 90px; /* Slightly larger icon */
+    width: 90px;
     height: auto;
 }
 
 .azra-title {
     font-family: 'Gloria Hallelujah', cursive;
     font-weight: 700;
-    font-size: 2rem; /* Larger title */
+    font-size: 2rem; 
     color: #2c3e50;
 }
 
 .doghouse-icon {
-    width: 90px; /* Doghouse menu icon */
+    width: 90px; 
     cursor: pointer;
     transition: transform 0.3s;
 }
@@ -56,7 +50,7 @@ body.menu-open {
     transform: scale(1.1);
 }
 
-/* --- FLOATING SCROLL HEADER (top-bar) --- */
+
 .top-bar {
     position: fixed;
     top: 0;
@@ -68,10 +62,9 @@ body.menu-open {
     align-items: center;
     padding: 15px 50px;
     
-    /* Transparent Background with Blur Effect */
-    background-color: rgba(234, 222, 247, 0.8); /* #eadef7 with 80% opacity */
-    backdrop-filter: blur(5px);
-    
+ 
+    background-color: rgba(234, 222, 247, 0.8); 
+    backdrop-filter: blur(5px); 
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease, background-color 0.5s ease;
@@ -85,7 +78,7 @@ body.menu-open {
 }
 
 .top-bar-home-link {
-    text-decoration: none; /* Remove underline from home link */
+    text-decoration: none; 
     display: flex;
     align-items: center;
     gap: 20px;
@@ -115,19 +108,17 @@ body.menu-open {
 }
 
 
-/* ========================================
- * MAIN CONTENT LAYOUT
- * ======================================== */
+
 
 .content-wrapper {
-    max-width: 1200px; /* Max width for the three-column grid below */
+    max-width: 1200px; 
     width: 90%;
     margin: 0 auto;
 }
 
-/* 1. About Azra Top Section */
+
 .about-azra-section {
-    /* *** KEY FIX: Now designed to span the full viewport width *** */
+
     width: 100%; 
     display: flex;
     justify-content: center;
@@ -135,16 +126,15 @@ body.menu-open {
 }
 
 .about-azra-image {
-    /* *** KEY FIX: This image now stretches to its max possible size (100% of the section) *** */
+   
     width: 100%; 
     height: auto;
-    /* This ensures the image scales down if the browser is very narrow, 
-       but uses the full 100% width set on the parent section */
+    
     object-fit: contain; 
     display: block;
 }
 
-/* 2. Three-Column Grid for Creators */
+
 .creators-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -154,9 +144,9 @@ body.menu-open {
 }
 
 .grid-item {
-    /* Base styling for all items in the grid */
-    border-radius: 18px; /* Rounded corners */
-    overflow: hidden; /* Important to keep the image within the container */
+   
+    border-radius: 18px; 
+    overflow: hidden; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -164,33 +154,31 @@ body.menu-open {
 }
 
 .grid-item:hover {
-    transform: translateY(-5px); /* Small lift effect on hover */
+    transform: translateY(-5px); 
 }
 
 .creator-image,
 .box-image {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Ensures the images are fully visible */
+    object-fit: contain; 
     display: block;
 }
 
-/* Specific item height for the picture containers to match the screenshot proportion */
+
 .zach-pic-container {
-    height: 300px; /* Adjusted height */
+    height: 300px; 
 }
 .amber-pic-container {
-    height: 300px; /* Adjusted height */
+    height: 300px; 
 }
 
-/* The Explanation box spans 2 rows in the third column */
+
 .span-row-2 {
     grid-row: span 2;
 }
 
-/* ========================================
- * MENU OVERLAY STYLES (Reused from your CSS)
- * ======================================== */
+
 
 .menu-overlay {
     position: fixed;
@@ -291,30 +279,28 @@ body.menu-open {
 }
 
 
-/* ========================================
- * RESPONSIVENESS (Mobile/Tablet Adjustments)
- * ======================================== */
+
 @media (max-width: 1000px) {
-    /* For smaller screens, the three columns might not fit well */
+   
     .creators-grid {
-        /* Change to 2 columns on tablets/smaller screens */
+       
         grid-template-columns: 1fr 1fr;
     }
     
-    /* Make the explanation box span both columns at the bottom */
+    
     .span-row-2 {
         grid-column: span 2;
-        grid-row: auto; /* Reset row span */
+        grid-row: auto; 
     }
 }
 
 @media (max-width: 600px) {
-    /* For phones, stack everything into 1 column */
+   
     .creators-grid {
         grid-template-columns: 1fr;
     }
     
-    /* Reset spans */
+    
     .span-row-2 {
         grid-column: span 1;
     }

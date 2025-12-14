@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>azra - Kalachuchi</title>
+
+    <link rel="icon" type="image/png" href="azra.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&family=Gloria+Hallelujah&family=Delius&display=swap" rel="stylesheet">
+ 
+    <link rel="stylesheet" href="AzraKalachuchi.css">
+</head>
+<body>
+
+    <div class="top-bar" id="scroll-header">
+        <div class="top-left">
+            <a href="AzraHomepage.html" class="top-bar-home-link">
+                <img src="azra.png" class="top-icon" onerror="this.onerror=null;this.src='https://placehold.co/55x55/E6B09E/000000?text=A'">
+                <span class="top-title">azra</span>
+            </a>
+        </div>
+        <img src="menubar.png" class="top-menu" id="top-menu-icon" onerror="this.onerror=null;this.src='https://placehold.co/60x60/E6B09E/000000?text=☰'">
+    </div>
+
+    <div class="background-container" id="hero-center-content">
+        <header class="header-section">
+            <div class="header-left">
+                <img src="azra.png" class="azra-icon" alt="Azra Icon">
+                <span class="azra-title">azra</span>
+            </div>
+            <img src="menubar.png" class="doghouse-icon" id="corner-menu-icon" alt="Menu Icon">
+        </header>
+
+        <main class="content-wrapper">
+            
+            <section class="kalachuchi-layout">
+                
+                <div class="pic-container">
+                    <img src="kalachuchipic.png" class="main-pic" alt="Kalachuchi Area"
+                         onerror="this.onerror=null;this.src='https://placehold.co/500x350/E6B09E/000000?text=KALACHUCHI+PIC'">
+                </div>
+
+                <div class="desc-container">
+                    <img src="kaladesc.png" class="desc-box" alt="Kalachuchi Description"
+                         onerror="this.onerror=null;this.src='https://placehold.co/400x350/FFC1C1/000000?text=DESCRIPTION+BOX'">
+                </div>
+                
+                <div class="dog-container">
+                    <img src="kalachuchidog.png" class="dog-pic" alt="Azra on a rock"
+                         onerror="this.onerror=null;this.src='https://placehold.co/250x250/E6B09E/000000?text=DOG+IMAGE'">
+                </div>
+                
+                <div class="funfact-container">
+                    <img src="kalafunfact.png" class="funfact-box" alt="Fun Facts"
+                         onerror="this.onerror=null;this.src='https://placehold.co/500x150/FFC1C1/000000?text=FUN+FACT+BOX'">
+                </div>
+
+            </section>
+        </main>
+    </div> <div id="menu-overlay" class="menu-overlay">
+        <div class="menu-content">
+            <button class="menu-close" id="menu-close-button">X</button>
+            <nav class="menu-links">
+                <a href="AzraHomepage.html" class="menu-link-item">azra’s home</a>
+                <a href="AzraAboutpage.html" class="menu-link-item">about azra</a>
+                <a href="#" class="menu-link-item">lakbay with azra</a>
+                <a href="#" class="menu-link-item">behind the making</a>
+                <a href="#" class="menu-link-item">pasasalamat</a>
+                <a href="#" class="menu-link-item">aircon!</a>
+                <a href="#" class="menu-link-item">nature!</a>
+                <a href="#" class="menu-link-item">student central</a>
+            </nav>
+            <div class="socmeds-container">
+                <img src="socmeds.png" alt="Social Media Links" class="socmeds-image" 
+                onerror="this.onerror=null;this.src='https://placehold.co/250x60/F0F8FF/000000?text=Social+Links'">
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // JAVASCRIPT LOGIC (Copied from About Azra, using Intersection Observer for sticky bar)
+        document.addEventListener('DOMContentLoaded', () => {
+            const topBar = document.getElementById('scroll-header');
+            const heroCenter = document.getElementById('hero-center-content');
+            const body = document.body;
+
+            const menuOverlay = document.getElementById('menu-overlay');
+            const menuCloseButton = document.getElementById('menu-close-button');
+            const topMenuIcon = document.getElementById('top-menu-icon');
+            const cornerMenuIcon = document.getElementById('corner-menu-icon');
+
+
+            const toggleMenu = () => {
+                const isOpen = menuOverlay.classList.toggle('open');
+                body.classList.toggle('menu-open', isOpen);
+                
+                if (isOpen) {
+                    body.style.overflow = 'hidden';
+                } else {
+                    body.style.overflow = '';
+                }
+            };
+            
+            if (topMenuIcon) { topMenuIcon.addEventListener('click', toggleMenu); }
+            if (cornerMenuIcon) { cornerMenuIcon.addEventListener('click', toggleMenu); }
+            if (menuCloseButton) { menuCloseButton.addEventListener('click', toggleMenu); }
+            
+            if (menuOverlay) {
+                menuOverlay.addEventListener('click', (e) => {
+                    if (e.target === menuOverlay) { toggleMenu(); }
+                });
+            }
+
+            document.querySelectorAll('.menu-link-item').forEach(link => {
+                link.addEventListener('click', toggleMenu);
+            });
+
+
+            // --- Header Visibility Logic (Intersection Observer) ---
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px 0px 0px',
+                threshold: 0.0 
+            };
+
+            const observerCallback = (entries, observer) => {
+                entries.forEach(entry => {
+                    // Show the top bar if the hero section is scrolled out of view.
+                    if (entry.isIntersecting) {
+                        topBar.classList.remove('visible');
+                    } else {
+                        topBar.classList.add('visible');
+                    }
+                });
+            };
+
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+            if (heroCenter) {
+                observer.observe(heroCenter);
+            }
+        });
+    </script>
+</body>
+</html>

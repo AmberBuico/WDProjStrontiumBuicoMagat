@@ -1,39 +1,35 @@
 body {
             margin: 0;
-            font-family: 'Balsamiq Sans', cursive; /* Default font */
-            background-color: #eadef7; /* Default background is light purple */
+            font-family: 'Balsamiq Sans', cursive; 
+            background-color: #eadef7; 
             color: #2c3e50;
             scroll-behavior: smooth;
             transition: background-color 0.5s ease;
         }
 
-        /* Dimming Effect for the Body when menu is open */
+        
         body.menu-open {
             overflow: hidden; 
         }
-
-        /* New Font Usage - Retaining for text that isn't images */
+       
         .top-title {
             font-family: 'Gloria Hallelujah', cursive;
         }
-
-        /* --- Dynamic Color Classes (Restored and used for both body and top bar) --- */
+        
+        
         .bg-color-1 { background-color: #fbd7c4 !important; }
         .bg-color-2 { background-color: #f2a4ab !important; }
         .bg-color-3 { background-color: #cc95a6 !important; }
         .bg-color-4 { background-color: #aaa3b2 !important; }
         .bg-color-5 { background-color: #6a879e !important; }
 
-        /* New Transparent Top Bar Colors - LESS OPAQUE (0.7) */
-        .top-bar.bg-color-default { background-color: rgba(234, 222, 247, 0.7) !important; } /* Default less opaque */
-        .top-bar.bg-color-1 { background-color: rgba(251, 215, 196, 0.7) !important; } /* fbd7c4 */
-        .top-bar.bg-color-2 { background-color: rgba(242, 164, 171, 0.7) !important; } /* f2a4ab */
-        .top-bar.bg-color-3 { background-color: rgba(204, 149, 166, 0.7) !important; } /* cc95a6 */
-        .top-bar.bg-color-4 { background-color: rgba(170, 163, 178, 0.7) !important; } /* aaa3b2 */
-        .top-bar.bg-color-5 { background-color: rgba(106, 135, 158, 0.7) !important; } /* 6a879e */
+        .top-bar.bg-color-default { background-color: rgba(234, 222, 247, 0.7) !important; } 
+        .top-bar.bg-color-1 { background-color: rgba(251, 215, 196, 0.7) !important; } 
+        .top-bar.bg-color-2 { background-color: rgba(242, 164, 171, 0.7) !important; } 
+        .top-bar.bg-color-3 { background-color: rgba(204, 149, 166, 0.7) !important; } 
+        .top-bar.bg-color-4 { background-color: rgba(170, 163, 178, 0.7) !important; } 
+        .top-bar.bg-color-5 { background-color: rgba(106, 135, 158, 0.7) !important; } 
 
-
-        /* --- TOP BAR --- */
         .top-bar {
             position: fixed;
             top: 0;
@@ -44,7 +40,7 @@ body {
             justify-content: space-between;
             align-items: center;
             padding: 20px 50px;
-            background-color: rgba(234, 222, 247, 0.7); /* Default less opaque */
+            background-color: rgba(234, 222, 247, 0.7); 
             backdrop-filter: blur(8px);
             opacity: 0;
             visibility: hidden;
@@ -79,10 +75,10 @@ body {
         }
 
         .top-menu:hover {
-            transform: scale(1.1); /* Hover effect for top menu icon */
+            transform: scale(1.1); 
         }
 
-        /* --- HERO SECTION --- */
+
         .hero {
             position: relative;
             height: 450px;
@@ -96,7 +92,7 @@ body {
             position: absolute;
         }
 
-        /* FLOWER: Increased size and added hover scale */
+
         .flower {
             top: 30px;
             left: 30px;
@@ -105,12 +101,12 @@ body {
             transition: transform 0.3s;
         }
         
-        /* New Flower Hover Effect */
+       
         .flower:hover {
             transform: scale(1.2);
         }
 
-        /* Menu icon in the corner */
+       
         .menu {
             top: 30px;
             right: 30px;
@@ -120,7 +116,7 @@ body {
         }
 
         .menu:hover {
-            transform: scale(1.1); /* Hover effect for hero menu icon */
+            transform: scale(1.1); 
         }
 
         .hero-center {
@@ -132,10 +128,10 @@ body {
             margin-top: -30px;
         }
 
-        /* CORGI LOGO */
+        
         .logo {
             width: 350px;
-            height: auto; /* Fix to prevent squishing */
+            height: auto; 
             transition: transform 0.3s, animation 0.6s;
         }
 
@@ -144,7 +140,7 @@ body {
             transform: scale(1.15);
         }
 
-        /* TAGLINE CONTAINER */
+        
         .tagline-container {
             display: flex;
             flex-direction: column;
@@ -153,7 +149,7 @@ body {
             gap: 5px;
         }
         
-        /* INCREASED SIZE FOR tagline.png (Azra name) */
+    
         .tagline-image {
             width: 300px;
             height: auto;
@@ -161,7 +157,7 @@ body {
         }
 
 
-        /* WIGGLE ANIMATION */
+        
         @keyframes wiggle {
             0% { transform: rotate(0deg); }
             25% { transform: rotate(5deg); }
@@ -170,33 +166,24 @@ body {
             100% { transform: rotate(0deg); }
         }
 
-        /* ========================================
-           MENU OVERLAY STYLES
-           ======================================== */
+        
         .menu-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 200; /* Above the sticky header */
-            
-            /* Initial state: Hidden and off-screen to the right */
+            z-index: 200;
             opacity: 0;
             visibility: hidden;
-            transform: translateX(100%);
-            
-            /* Smooth transition for slide and fade */
-            transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease-out;
-
-            /* Dimming background (semitransparent dark overlay) */
-            background-color: rgba(0, 0, 0, 0.4); 
-
+                transform: translateX(100%);
+                transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease-out;
+                background-color: rgba(0, 0, 0, 0.4); 
             display: flex;
-            justify-content: flex-end; /* Push content to the right edge */
+            justify-content: flex-end; 
         }
 
-        /* MENU OPEN STATE */
+        
         .menu-overlay.open {
             opacity: 1;
             visibility: visible;
@@ -205,17 +192,14 @@ body {
 
         .menu-content {
             width: 100%;
-            max-width: 400px; /* Max width for the menu panel */
+            max-width: 400px; 
             height: 100%;
-            background-color: #fff; /* Fallback color */
-            
-            /* Use menubarbg.png */
+            background-color: #fff;
             background-image: url('menubarbg.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            
-            padding: 50px 30px;
+                padding: 50px 30px;
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
@@ -243,41 +227,41 @@ body {
             color: #f2a4ab;
         }
 
-        /* Menu Links - Adjusted gap and margin-top for better visibility of all items */
+       
         .menu-links {
             display: flex;
             flex-direction: column;
-            gap: 20px; /* Reduced gap from 30px to 20px */
-            margin-top: 50px; /* Reduced margin-top from 100px to 50px */
-            margin-bottom: auto; /* Push social media to the bottom */
+            gap: 20px; 
+            margin-top: 50px; 
+            margin-bottom: auto; 
         }
 
         .menu-link-item {
             font-family: 'Gloria Hallelujah', cursive;
-            font-size: 1.3rem; /* Further reduced from 1.5rem to 1.3rem for better fit */
+            font-size: 1.3rem; 
             color: #2c3e50;
             text-decoration: none;
             transition: color 0.3s, transform 0.3s;
             padding: 5px 15px;
             border-radius: 10px;
-            white-space: nowrap; /* Prevent wrapping for long titles */
+            white-space: nowrap; 
         }
         
-        /* Smaller font for mobile menu links */
+       
         @media (max-width: 480px) {
             .menu-link-item {
-                font-size: 1.1rem; /* Further reduced from 1.3rem to 1.1rem */
+                font-size: 1.1rem; 
             }
         }
 
 
         .menu-link-item:hover {
-            color: #2c3e50; /* Changed from pink (#f2a4ab) to dark text color */
+            color: #2c3e50;
             transform: scale(1.05);
             background-color: rgba(255, 255, 255, 0.5);
         }
 
-        /* Social Media Container */
+       
         .socmeds-container {
             margin-bottom: 50px;
         }
@@ -292,10 +276,7 @@ body {
             opacity: 0.8;
             transform: scale(1.05);
         }
-        /* ========================================
-           GRID STYLES (UNCHANGED)
-           ========================================
-        */
+      
         .grid-container {
             max-width: 1200px;
             width: 95%;
@@ -311,7 +292,7 @@ body {
 
         .card {
             width: 100%;
-            height: 240px; /* BIGGER like Miffy */
+            height: 240px; 
             border-radius: 18px;
             display: flex;
             align-items: center;
@@ -341,7 +322,7 @@ body {
         }
 
 
-        /* Responsive stuff for phones/smaller screens */
+
         @media (max-width: 768px) {
             .top-bar { padding: 15px 20px; }
             .top-icon { width: 40px; }
@@ -357,18 +338,18 @@ body {
             .tagline-container { gap: 2px; }
             .tagline-image { width: 200px; }
 
-            /* Mobile Menu specific */
+          
             .menu-content {
                 max-width: 80%;
             }
             .menu-link-item {
-                font-size: 1.1rem; /* Uses the new smaller size */
+                font-size: 1.1rem; 
             }
             .socmeds-image {
                 width: 180px;
             }
 
-            /* Mobile Grid: 2 columns */
+           
             .grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 8px;

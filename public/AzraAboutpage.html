@@ -131,7 +131,7 @@
         const cornerMenuIcon = document.getElementById('corner-menu-icon');
 
 
-        // --- Menu Open/Close Logic (Reused) ---
+        // --- Menu Open/Close Logic ---
         const toggleMenu = () => {
             const isOpen = menuOverlay.classList.toggle('open');
             body.classList.toggle('menu-open', isOpen);
@@ -167,13 +167,13 @@
         });
 
 
-        // --- NEW: Header Visibility Logic for immediate scroll ---
+        // --- Header Visibility Logic for immediate scroll ---
         const headerSection = document.querySelector('.header-section');
-        // Calculate the height of the initial non-sticky header area
+        // To calculate the height of the initial non-sticky header area
         const headerHeightToPass = headerSection ? headerSection.offsetHeight : 150; 
         
         const checkScroll = () => {
-            // Show the top bar if the user has scrolled past the initial header content
+
             if (window.scrollY > headerHeightToPass) {
                 topBar.classList.add('visible');
             } else {
@@ -181,11 +181,9 @@
             }
         };
 
-        // Check scroll immediately on load
-        checkScroll(); 
-        
-        // Check scroll every time the user scrolls
-        window.addEventListener('scroll', checkScroll);
+      
+            checkScroll(); 
+            window.addEventListener('scroll', checkScroll);
 
     });
 </script>
