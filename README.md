@@ -3,6 +3,34 @@
 **Project members:** Amber Daphne A. Buico & Zach Joseph S. Magat     
 **Section:** Grade 9 – Strontium <3
 
+## Q3 Project Update
+
+### Final Title
+**Azra The 67th Explorer**
+
+## Features, Details, and Our Definition of Done
+
+### General
+- Works on both mobile and laptop
+- You can navigate through any of the webpages in the website without leaving the website.
+- When you hover on most of the elements, it will pop-up or like highlight it.
+
+### Homepage
+- There's a Homepage wherein it includes elements (a.k.a the boxes below azra or the corgi) that will navigate the user through the different tambayan places.
+- When you open the website, the homepage will show you a corgi, named azra (there will also be a label 'azra') under it.  Other than that, there will also be a tagline under the label 'azra'.
+- When you hover your mouse on the flower, it will change the background color of the homepage.
+- When you hover your mouse on azra, or the corgi in the middle, it wiggles and zoom in a bit.
+
+### Sidebar
+### Tambayan places
+- In one of the webpages for the tambayan places, when you click the dog, the background design will change into a different and moving one.
+
+
+
+
+
+
+
 ## [1] Working Website Title
 **Azra The 67th Explorer** 
 > **Explanation:** Our website is all about exploring the different tambayan spots around Pisay, so we thought of connecting it to Dora the Explorer! We combined our names—Zach + Amber + Dora—and came up with Azra. As for the “67th,” it’s kind of an inside joke and a time marker. We’re making this project in 2025, when “67” became the word (or rather, numbers) of the year. So we decided to include it as a fun reminder of this moment in time—proof that people were once obsessed with two random numbers!
