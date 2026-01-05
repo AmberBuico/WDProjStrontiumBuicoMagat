@@ -6,30 +6,71 @@
 ## Q3 Project Update
 
 ### Final Title
-**Azra The 67th Explorer**
+> **Azra The 67th Explorer**
 
 ## Features, Details, and Our Definition of Done
 
 ### General
-- Works on both mobile and laptop
-- You can navigate through any of the webpages in the website without leaving the website.
-- When you hover on most of the elements, it will pop-up or like highlight it.
+- The website works on both **mobile and laptop** screens.
+- Users can navigate through all webpages without leaving the website.
+- Most interactive elements respond to hover (highlight, pop-up, or animation).
+- JavaScript is used for animations, navigation, and user interaction.
+- The overall tone of the website is **welcoming, playful, and calm**, not advertising.
+
+### User Input & Local Storage
+- Upon opening the website for the first time, a **friendly pop-up** appears asking the user what type of tambayan they usually prefer:
+  - Tambayan with A/C
+  - Tambayan with Nature
+  - Anywhere / Surprise me
+- This input is **optional** and can be skipped.
+- The selected preference is saved using **localStorage**.
+- The data is used only to:
+  - Highlight related tambayan groups on the homepage
+  - Change Azra’s dialogue to better match the user’s preference
+- No personal or sensitive data is collected.
+- All stored data stays on the user’s device and can be cleared by the user at any time.
 
 ### Homepage
-- There's a Homepage wherein it includes elements (a.k.a the boxes below azra or the corgi) that will navigate the user through the different tambayan places.
-- When you open the website, the homepage will show you a corgi, named azra (there will also be a label 'azra') under it.  Other than that, there will also be a tagline under the label 'azra'.
-- When you hover your mouse on the flower, it will change the background color of the homepage.
-- When you hover your mouse on azra, or the corgi in the middle, it wiggles and zoom in a bit.
+- The homepage contains navigation elements (boxes below Azra, the corgi icon) that direct users to different tambayan places.
+- Upon opening the website, the homepage displays:
+  - The corgi character named **Azra**, with a visible label
+  - A short tagline below Azra
+- Hovering over the flower changes the homepage background color.
+- Hovering over Azra causes the character to wiggle and slightly zoom in.
+- The homepage layout is highly inspired by miffy's website.
 
-### Sidebar
-### Tambayan places
-- In one of the webpages for the tambayan places, when you click the dog, the background design will change into a different and moving one.
+### Sidebar Navigation
+- The sidebar contains:
+  - A link to the **About Us** page and an option to return to the homepage.
+  - Links to grouped tambayan directories
+  - The creator's personal social media links
+- The sidebar is accessed by clicking the **dog house icon** on the top-right corner.
+- It slides out from the side and does not redirect to a new webpage.
+
+### Tambayan Places
+- Each tambayan has its **own webpage**.
+- Tambayan pages can be accessed from:
+  - The homepage
+  - Grouped directory pages
+- Each tambayan page includes:
+  - A photo of the place
+  - A short description
+  - One fun fact
+  - More fun related things to that specific tambayan.
+- Azra appears on each tambayan page and provides short dialogue related to the location.
+- Background elements will change when Azra is clicked.
+
+### Definition of Done
+The website is considered **done** when:
+- All main pages are complete and navigable.
+- Tambayan directories and individual tambayan pages are fully implemented.
+- JavaScript features (animations, sidebar, pop-ups, localStorage) are working properly.
+- The website is responsive and visually consistent.
+- All sources are cited and credits are included.
 
 
 
-
-
-
+--------------------------------------------------------------------------------------------
 
 ## [1] Working Website Title
 **Azra The 67th Explorer** 
