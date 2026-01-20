@@ -3,15 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>azra - Kalachuchi</title>
-
+    <title>azra - Astb</title>
     <link rel="icon" type="image/png" href="azra.png">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&family=Gloria+Hallelujah&family=Delius&display=swap" rel="stylesheet">
- 
-    <link rel="stylesheet" href="AzraKalachuchi.css">
+    <link rel="stylesheet" href="AzraAstb.css">
 </head>
 <body>
 
@@ -26,30 +23,25 @@
     </div>
 
     <div class="background-container">
-
         <main class="content-wrapper">
-            
             <section class="kalachuchi-layout">
-                
                 <div class="main-content-boxes">
                     <div class="pic-container">
-                        <img src="kalachuchipic.png" class="main-pic" alt="Kalachuchi Area"
-                            onerror="this.onerror=null;this.src='https://placehold.co/500x350/E6B09E/000000?text=KALACHUCHI+PIC'">
+                        <img src="astbpic.png" class="main-pic" alt="Astb Area">
                     </div>
 
                     <div class="desc-container">
-                        <img src="kaladesc.png" class="desc-box" alt="Kalachuchi Description"
-                            onerror="this.onerror=null;this.src='https://placehold.co/400x350/FFC1C1/000000?text=DESCRIPTION+BOX'">
+                        <img src="astbdesc.png" class="desc-box" alt="Astb Description">
                     </div>
                 </div>
                 <div class="funfact-container">
-                    <img src="kalafunfact.png" class="funfact-box" alt="Fun Facts"
-                            onerror="this.onerror=null;this.src='https://placehold.co/500x150/FFC1C1/000000?text=FUN+FACT+BOX'">
+                    <img src="astbfunfact.png" class="funfact-box" alt="Fun Facts">
                 </div>
-
             </section>
         </main>
-    </div> <div id="menu-overlay" class="menu-overlay">
+    </div>
+
+    <div id="menu-overlay" class="menu-overlay">
         <div class="menu-content">
             <button class="menu-close" id="menu-close-button">X</button>
             <nav class="menu-links">
@@ -61,45 +53,31 @@
                 <a href="#" class="menu-link-item">student central</a>
             </nav>
             <div class="socmeds-container">
-                <img src="socmeds.png" alt="Social Media Links" class="socmeds-image" 
-                onerror="this.onerror=null;this.src='https://placehold.co/250x60/F0F8FF/000000?text=Social+Links'">
+                <img src="socmeds.png" alt="Social Media Links" class="socmeds-image">
             </div>
         </div>
     </div>
 
-
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            
             const body = document.body;
             const menuOverlay = document.getElementById('menu-overlay');
             const menuCloseButton = document.getElementById('menu-close-button');
-            
             const topMenuIcon = document.getElementById('top-menu-icon'); 
 
             const toggleMenu = () => {
                 const isOpen = menuOverlay.classList.toggle('open');
                 body.classList.toggle('menu-open', isOpen);
-                
-                if (isOpen) {
-                    body.style.overflow = 'hidden';
-                } else {
-                    body.style.overflow = '';
-                }
+                body.style.overflow = isOpen ? 'hidden' : '';
             };
             
-            if (topMenuIcon) { topMenuIcon.addEventListener('click', toggleMenu); }
-            if (menuCloseButton) { menuCloseButton.addEventListener('click', toggleMenu); }
-            
+            if (topMenuIcon) topMenuIcon.addEventListener('click', toggleMenu);
+            if (menuCloseButton) menuCloseButton.addEventListener('click', toggleMenu);
             if (menuOverlay) {
                 menuOverlay.addEventListener('click', (e) => {
-                    if (e.target === menuOverlay) { toggleMenu(); }
+                    if (e.target === menuOverlay) toggleMenu();
                 });
             }
-
-            document.querySelectorAll('.menu-link-item').forEach(link => {
-                link.addEventListener('click', toggleMenu);
-            });
         });
     </script>
 </body>
