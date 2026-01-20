@@ -22,7 +22,8 @@
   - Tambayan with A/C
   - Tambayan with Nature
   - Anywhere / Surprise me
-- This input is **optional** and can be skipped.
+- This input is **required** and can be skipped.
+- After the user inputs the type of tambayan they prefer, another box will pop-up saying something like "Thank you for your response! Click this to proceed!"
 - The selected preference is saved using **localStorage**.
 - The data is used only to:
   - Highlight related tambayan groups on the homepage
