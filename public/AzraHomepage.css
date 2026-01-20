@@ -320,3 +320,37 @@ body {
             }
             .card.span-2 { grid-column: span 2;}
         }
+
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0,0,0,0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-box {
+  background: #ddbbf9;
+  padding: 2rem;
+  width: min(90%, 400px);
+  border-radius: 15px;
+  text-align: center;
+  font-family: 'Balsamiq Sans', cursive;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 12px 0;
+  cursor: pointer;
+}
+
+.popup-box button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+

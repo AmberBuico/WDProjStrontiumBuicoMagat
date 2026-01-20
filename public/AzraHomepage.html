@@ -14,8 +14,36 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="AzraHomepage.css">
 
+    <button onclick="resetPreference()">Reset Preference</button>
+
 </head>
 <body>
+
+    <div id="requiredPopup" class="popup-overlay">
+  <div class="popup-box">
+    <h2>Before You Continue</h2>
+    <p>What kind of tambayan do you prefer?</p>
+
+    <form id="popupForm">
+      <label class="option">
+        <input type="radio" name="preference" value="aircon" required>
+        Tambayan with A/C
+      </label>
+
+      <label class="option">
+        <input type="radio" name="preference" value="nature">
+        Tambayan with Nature
+      </label>
+
+      <label class="option">
+        <input type="radio" name="preference" value="surprise">
+        Anywhere / Surprise me
+      </label>
+
+      <button type="submit">Continue</button>
+    </form>
+  </div>
+</div>
 
     <div class="top-bar bg-color-default" id="scroll-header">
         <div class="top-left">
@@ -229,5 +257,7 @@
             }
         });
     </script>
+
+    <script src="popup.js"></script>
 </body>
 </html>
