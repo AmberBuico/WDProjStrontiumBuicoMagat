@@ -6,7 +6,7 @@ body {
 
     min-height: 100vh; 
     overflow-x: hidden;
-    overflow-y: hidden; 
+    overflow-y: auto; 
     
     background-color: #f8b28e; 
 }
@@ -17,9 +17,7 @@ body.menu-open {
 
 .background-container {
     background-image: url('kalachuchibg.png');
-    
-    background-size: 100% auto; 
-    
+    background-size: 100% auto;
     background-repeat: no-repeat;
     background-position: center top; 
     min-height: 100vh; 
@@ -280,5 +278,12 @@ body.menu-open {
 @media (max-width: 600px) {
     .fixed-header-bar {
         padding: 10px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .background-container {
+        background-size: cover;   
+        background-position: center;
     }
 }

@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&family=Gloria+Hallelujah&family=Delius&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="AzraLibrary.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 </head>
 <body>
 
@@ -25,20 +26,34 @@
     <div class="background-container">
         <main class="content-wrapper">
             <section class="kalachuchi-layout">
-                <div class="main-content-boxes">
-                    <div class="pic-container">
-                        <img src="librarypic.png" class="main-pic" alt="Library Area">
-                    </div>
 
-                    <div class="desc-container">
-                        <img src="librarydesc.png" class="desc-box" alt="Library Description">
-                    </div>
-                </div>
-                <div class="funfact-container">
-                    <img src="libraryfunfact.png" class="funfact-box" alt="Fun Facts">
-                </div>
-            </section>
-        </main>
+    <div class="columns is-variable is-4 is-desktop is-multiline">
+
+      <div class="column is-7-desktop is-12-mobile">
+        <div class="pic-container">
+          <img src="librarypic.png" class="main-pic" alt="Lib Area">
+        </div>
+      </div>
+
+      <div class="column is-5-desktop is-12-mobile">
+        <div class="desc-container">
+          <img src="librarydesc.png" class="desc-box" alt="Lib Description">
+        </div>
+      </div>
+
+    </div>
+
+    <div class="columns">
+      <div class="column is-12">
+        <div class="funfact-container">
+          <img src="libraryfunfact.png" class="funfact-box" alt="Fun Facts">
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+</main>
     </div>
 
     <div id="menu-overlay" class="menu-overlay">

@@ -12,9 +12,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&family=Gloria+Hallelujah&family=Delius&display=swap" rel="stylesheet">
  
     <link rel="stylesheet" href="AzraKalachuchi.css">
-</head>
-<body>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
+</head>
+
+<body>
     <div class="fixed-header-bar">
         <div class="top-left">
             <a href="AzraHomepage.html" class="top-bar-home-link">
@@ -26,30 +28,40 @@
     </div>
 
     <div class="background-container">
-
         <main class="content-wrapper">
-            
             <section class="kalachuchi-layout">
-                
-                <div class="main-content-boxes">
-                    <div class="pic-container">
-                        <img src="kalachuchipic.png" class="main-pic" alt="Kalachuchi Area"
-                            onerror="this.onerror=null;this.src='https://placehold.co/500x350/E6B09E/000000?text=KALACHUCHI+PIC'">
-                    </div>
 
-                    <div class="desc-container">
-                        <img src="kaladesc.png" class="desc-box" alt="Kalachuchi Description"
-                            onerror="this.onerror=null;this.src='https://placehold.co/400x350/FFC1C1/000000?text=DESCRIPTION+BOX'">
-                    </div>
-                </div>
-                <div class="funfact-container">
-                    <img src="kalafunfact.png" class="funfact-box" alt="Fun Facts"
-                            onerror="this.onerror=null;this.src='https://placehold.co/500x150/FFC1C1/000000?text=FUN+FACT+BOX'">
-                </div>
+    <div class="columns is-variable is-4 is-desktop is-multiline">
 
-            </section>
-        </main>
-    </div> <div id="menu-overlay" class="menu-overlay">
+      <div class="column is-7-desktop is-12-mobile">
+        <div class="pic-container">
+          <img src="kalachuchipic.png" class="main-pic" alt="Kalachuchi Area">
+        </div>
+      </div>
+
+      <div class="column is-5-desktop is-12-mobile">
+        <div class="desc-container">
+          <img src="kaladesc.png" class="desc-box" alt="Kalachuchi Description">
+        </div>
+      </div>
+
+    </div>
+
+    <div class="columns">
+      <div class="column is-12">
+        <div class="funfact-container">
+          <img src="kalafunfact.png" class="funfact-box" alt="Fun Facts">
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+</main>
+
+    </div> 
+    
+    <div id="menu-overlay" class="menu-overlay">
         <div class="menu-content">
             <button class="menu-close" id="menu-close-button">X</button>
             <nav class="menu-links">
