@@ -324,33 +324,119 @@ body {
 .popup-overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(0,0,0,0.6);
+  background: rgba(44, 62, 80, 0.45);
+  backdrop-filter: blur(6px);
   display: none;
   justify-content: center;
   align-items: center;
   z-index: 9999;
+  animation: fadeIn 0.4s ease;
 }
 
 .popup-box {
-  background: #ddbbf9;
-  padding: 2rem;
-  width: min(90%, 400px);
-  border-radius: 15px;
+  background: linear-gradient(135deg, #f4d9ff, #e7c6ff);
+  padding: 2.5rem 2rem;
+  width: min(92%, 420px);
+  border-radius: 28px;
   text-align: center;
   font-family: 'Balsamiq Sans', cursive;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+  animation: floatIn 0.5s ease;
+}
+
+.popup-box h2 {
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.popup-box h2 {
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.popup-box p,
+.popup-box h3 {
+  font-size: 1rem;
+  margin-bottom: 18px;
 }
 
 .option {
+  background: #ffffffaa;
+  padding: 12px 15px;
+  border-radius: 18px;
+  margin: 10px 0;
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin: 12px 0;
+  gap: 12px;
   cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.option:hover {
+  transform: scale(1.03);
+  background: #ffffff;
 }
 
 .popup-box button {
-  margin-top: 20px;
-  padding: 10px 20px;
+  margin-top: 22px;
+  padding: 12px 24px;
+  border-radius: 25px;
+  border: none;
+  background: #f2a4ab;
+  color: white;
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 1rem;
   cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.popup-box button:hover {
+  transform: translateY(-3px) scale(1.05);
+  background: #e38f98;
+}
+
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+#userName {
+  width: 80%;
+  padding: 12px 20px;
+  margin: 15px 0;
+  border: 2px solid #e7c6ff;
+  border-radius: 20px;
+  font-family: 'Balsamiq Sans', cursive;
+  font-size: 1rem;
+  color: #5c43cc;
+  background-color: rgba(255, 255, 255, 0.8);
+  outline: none;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+#userName:focus {
+  border-color: #f2a4ab;
+  box-shadow: 0 0 10px rgba(242, 164, 171, 0.4);
+  background-color: #fff;
+}
+
+#userName::placeholder {
+  color: #aaa3b2;
+  opacity: 0.7;
 }
 

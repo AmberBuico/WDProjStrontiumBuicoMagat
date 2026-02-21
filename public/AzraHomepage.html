@@ -13,20 +13,27 @@
   
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="AzraHomepage.css">
-
-    <button onclick="resetPreference()">Reset Preference</button>
+    <script src="popup.js"></script>
 
 </head>
-<body>
 
+<body>
     <div id="requiredPopup" class="popup-overlay">
   <div class="popup-box">
-    <h2>Before You Continue:</h2>
-    <h1>What kind of tambayan do you prefer?</h1>
 
-    <form id="popupForm">
+    <div id="step-name">
+      <h2>Hello there!</h2>
+      <p>Before you explore, what should Azra call you?</p>
+      <input type="text" id="userName" placeholder="Enter name" required>
+      <button id="toPreference">Next</button>
+    </div>
+
+    <div id="step-preference" style="display:none;">
+      <h2>Nice to meet you!</h2>
+      <h3>What kind of tambayan do you usually like?</h3>
+
       <label class="option">
-        <input type="radio" name="preference" value="aircon" required>
+        <input type="radio" name="preference" value="aircon">
         Tambayan with A/C
       </label>
 
@@ -40,8 +47,15 @@
         Anywhere / Surprise me
       </label>
 
-      <button type="submit">Continue</button>
-    </form>
+      <button id="savePreference">Continue</button>
+    </div>
+
+    <div id="step-done" style="display:none;">
+      <h2 id="finalMessage"></h2>
+      <p>Thank you for sharing! Enjoy exploring ✨</p>
+      <button id="closePopup">Enter Site</button>
+    </div>
+
   </div>
 </div>
 
@@ -248,5 +262,30 @@
     </script>
 
     <script src="popup.js"></script>
+    <p id="azraDialogue">Hi! Welcome!</p>
+    <script>
+document.addEventListener("DOMContentLoaded", function(){
+
+  const azraText = document.getElementById("azraDialogue");
+  if(!azraText) return; // page has no Azra
+
+  const pref = localStorage.getItem("tambayanPreference");
+  const name = localStorage.getItem("azraUserName") || "friend";
+
+  if(pref === "aircon"){
+    azraText.innerText = `Hi ${name}! Mukhang gusto mo ng malamig... try the indoor tambayans ❄️`;
+  }
+  else if(pref === "nature"){
+    azraText.innerText = `Hi ${name}! Perfect weather for outside tambayan 🌿`;
+  }
+  else if(pref === "surprise"){
+    azraText.innerText = `Hi ${name}! Random adventure tayo today 🎲`;
+  }
+  else{
+    azraText.innerText = `Hi ${name}! Pick a place and explore!`;
+  }
+
+});
+</script>
 </body>
 </html>

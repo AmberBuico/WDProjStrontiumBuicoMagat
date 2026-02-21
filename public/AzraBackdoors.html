@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Azra Local Storage Viewer</title>
+  <style>
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg,#f4ecff,#efe6ff);
+      padding:40px;
+      color:#3a2a5a;
+    }
+
+    .card{
+      max-width:600px;
+      margin:auto;
+      background:white;
+      border-radius:16px;
+      padding:25px;
+      box-shadow:0 10px 25px rgba(90,60,140,0.15);
+      border:2px solid #e3d6ff;
+    }
+
+    h2{
+      margin-top:0;
+      color:#b43fbf;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin-top:15px;
+      overflow:hidden;
+      border-radius:12px;
+    }
+
+    th, td{
+      padding:12px;
+      text-align:left;
+      border-bottom:1px solid #eee;
+    }
+
+    th{
+      background:#d69be8;
+      color:white;
+    }
+
+    tr:nth-child(even){
+      background:#f6f1ff;
+    }
+
+    .none{
+      color:#999;
+      font-style:italic;
+    }
+
+    button{
+      margin-top:18px;
+      padding:10px 16px;
+      border:none;
+      border-radius:10px;
+      background:#cc81e4;
+      color:white;
+      font-weight:bold;
+      cursor:pointer;
+      transition:0.2s;
+    }
+
+    button:hover{
+      background:#5c43cc;
+      transform:translateY(-1px);
+    }
+
+    .note{
+      font-size:12px;
+      margin-top:10px;
+      color:#7a6f9e;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <h2>Azra Stored Data</h2>
+
+  <table id="dataTable">
+    <tr>
+      <th>Stored Item</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>User Name</td>
+      <td id="nameCell"></td>
+    </tr>
+    <tr>
+      <td>Tambayan Preference</td>
+      <td id="prefCell"></td>
+    </tr>
+  </table>
+
+  <button onclick="clearData()">Clear Storage</button>
+  <p class="note">Clears saved data only on this device.</p>
+</div>
+
+<script>
+
+function showData() {
+
+    const table = document.getElementById("dataTable");
+    
+    table.innerHTML = `
+        <tr>
+            <th>Name</th>
+            <th>Preference</th>
+            <th>Visit Time</th>
+        </tr>
+    `;
+
+    const visitorsData = localStorage.getItem("azraVisitors");
+
+    if (!visitorsData) {
+        let row = table.insertRow();
+        let cell = row.insertCell(0);
+        cell.colSpan = 3;
+        cell.innerHTML = "No visitors in history yet.";
+        cell.className = "none";
+        return;
+    }
+
+    const visitors = JSON.parse(visitorsData);
+
+    visitors.reverse().forEach(user => {
+        let row = table.insertRow();
+        row.insertCell(0).innerHTML = user.name;
+        row.insertCell(1).innerHTML = user.preference;
+        row.insertCell(2).innerHTML = user.time;
+    });
+}
+
+function clearData(){
+    localStorage.clear();
+    alert("Storage Cleared!");
+    showData();
+}
+
+showData();
+
+</script>
+
+
+</body>
+</html>
