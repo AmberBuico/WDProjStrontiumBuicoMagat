@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travel Spin Wheel</title>
+<link rel="stylesheet" href="wheel.css">
+</head>
+
+<body>
+
+<img src="menubar.png" alt="Home"
+     class="home-icon"
+     onclick="goHome()">
+
+
+<h1>Random Tambayan Spinner!!</h1>
+<p>Click the wheel to spin!</p>
+
+
+<div class="wheel-container">
+    <div class="pointer"></div>
+    <div id="wheel"></div>
+</div>
+
+<div id="resultModal">
+    <div class="modal-content">
+        <h2 id="resultText"></h2>
+        <button class="exit" onclick="closeModal()">Exit</button>
+        <button class="reroll" onclick="spinWheel()">Reroll</button>
+        <button class="go" id="goButton">Go to Page</button>
+    </div>
+</div>
+
+<script>
+
+    function goHome() {
+    window.location.href = "AzraHomepage.html"; 
+}
+
+const places = [
+    { name: "Basketball Court", url: "http://127.0.0.1:5500/public/AzraBasketball.html" },
+    { name: "BLOB", url: "http://127.0.0.1:5500/public/AzraBlob.html" },
+    { name: "FLOB", url: "http://127.0.0.1:5500/public/AzraFlob.html" },
+    { name: "Gazebos", url: "http://127.0.0.1:5500/public/AzraGazebos.html" },
+    { name: "GCU", url: "http://127.0.0.1:5500/public/AzraGcu.html" },
+    { name: "Grandstand", url: "http://127.0.0.1:5500/public/AzraGrandstand.html" },
+    { name: "Josie's Nook", url: "http://127.0.0.1:5500/public/AzraJosiesNook.html" },
+    { name: "Kalachuchi", url: "http://127.0.0.1:5500/public/AzraKalachuchi.html" },
+    { name: "Library", url: "http://127.0.0.1:5500/public/AzraLibrary.html" },
+    { name: "Registrar", url: "http://127.0.0.1:5500/public/AzraRegistrar.html" },
+    { name: "Swings", url: "http://127.0.0.1:5500/public/AzraSwings.html" }
+];
+
+const wheel = document.getElementById("wheel");
+const resultModal = document.getElementById("resultModal");
+const resultText = document.getElementById("resultText");
+const goButton = document.getElementById("goButton");
+
+let currentRotation = 0;
+const sliceAngle = 360 / places.length;
+
+const pastelColors = [
+    "#FFD1DC", 
+    "#FFECB3",
+    "#C8E6C9", 
+    "#B3E5FC", 
+    "#D1C4E9", 
+    "#FFCCBC", 
+    "#F8BBD0", 
+    "#DCEDC8", 
+    "#E1BEE7", 
+    "#FFE0B2", 
+    "#B2DFDB" 
+];
+
+places.forEach((place, index) => {
+    const slice = document.createElement("div");
+    slice.className = "slice";
+    slice.style.transform = `rotate(${index * sliceAngle}deg) skewY(${90 - sliceAngle}deg)`;
+    slice.style.background = pastelColors[index % pastelColors.length];
+
+    const span = document.createElement("span");
+    span.innerText = place.name;
+
+    slice.appendChild(span);
+    wheel.appendChild(slice);
+});
+
+function spinWheel() {
+    const randomIndex = Math.floor(Math.random() * places.length);
+    const spinDegrees = 360 * 5 + (360 - randomIndex * sliceAngle);
+    currentRotation += spinDegrees;
+
+    wheel.style.transform = `rotate(${currentRotation}deg)`;
+
+    setTimeout(() => {
+        const selectedPlace = places[randomIndex];
+        resultText.innerText = `You got: ${selectedPlace.name}!`;
+        goButton.onclick = () => window.open(selectedPlace.url, "_blank");
+        resultModal.style.display = "flex";
+    }, 4000);
+}
+
+wheel.addEventListener("click", spinWheel);
+
+function closeModal() {
+    resultModal.style.display = "none";
+}
+</script>
+
+</body>
+</html>
