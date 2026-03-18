@@ -3,6 +3,38 @@
 **Project members:** Amber Daphne A. Buico & Zach Joseph S. Magat     
 **Section:** Grade 9 – Strontium <3
 
+## Q4 FINAL MODIFICATION PROPOSAL
+
+### Title
+> **Azra The 67th Explorer**
+
+### Description
+> **Azra The 67th Explorer** is a friendly, minimal guide to the best tambayan places around Pisay Main Campus.  Our website aims to help users appreciate our campus spaces and nature by showcasing each tambayan with **simple illustrations, quick facts, and a map**.  
+
+### Audience/Users
+> This website mainly highlights the indoor and outdoor hangout spots, short descriptions, photos, and tips.  That's why this project is perfect for freshies, laterals, visitors, or anyone who wants a peaceful place to relax while in Pisay MC.  Additionally, this website will help them efficiently navigate and explore the campus.  Other than that, it will be less time consuming for them than having to ask around for directions.  Lastly, other than the website's main purpose of helping the user navigate through Pisay, it is also easy to use on any device. 
+
+### This project is lovable!
+> The will love this project because...
+- It is user friendly.
+- The design is interactive.
+- Other than the information about the tambayans, it will also assist the user in choosing a specific group of tambayan places they prefer.
+
+### Features include:
+-  Sidebar for easy navigation
+- Spin the wheel
+- Fun facts
+- Descriptions of each tambayan place
+- Visuals of the tambayans
+- Local storage
+
+### We don't have:
+- No social medias of the creators
+- Interactive games about the tambayans
+
+Submitted by Amber Daphne Buico & Zach Joseph Magat on March 18, 2026 to Sir Roy in partial fulfillment of requirements in CS3 of DOST-PSHS-MC
+
+--------------------------------------------------------------------------------------------
 ## Q3 Project Update
 
 ### Final Title
@@ -155,6 +187,8 @@ Warning ⚠️: Sir the design is like super duper... not okay! But we'll fix it
 
 ## [8] Favicon
 > <img src="azra.png" alt="site icon" class="logo">
+
+
 
 
 
