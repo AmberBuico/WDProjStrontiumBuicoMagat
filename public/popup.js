@@ -29,35 +29,51 @@ document.addEventListener("DOMContentLoaded", () => {
     stepPref.style.display = "block";
   };
 
-  saveBtn.onclick = () => {
-    const selected = document.querySelector('input[name="preference"]:checked');
-    if (!selected) {
-      alert("Please choose a tambayan!");
-      return;
-    }
+saveBtn.onclick = () => {
+  const selected = document.querySelector('input[name="preference"]:checked');
+  if (!selected) {
+    alert("Please choose a tambayan!");
+    return;
+  }
 
-    const currentName = sessionStorage.getItem("currentActiveUser") || "Guest";
-    const currentPref = selected.value;
+  const currentName = sessionStorage.getItem("currentActiveUser") || "Guest";
+  const currentPref = selected.value;
 
-    let visitors = JSON.parse(localStorage.getItem("azraVisitors")) || [];
+  let visitors = JSON.parse(localStorage.getItem("azraVisitors")) || [];
 
-    visitors.push({
-      name: currentName,
-      preference: currentPref,
-      time: new Date().toLocaleString()
-    });
+  visitors.push({
+    name: currentName,
+    preference: currentPref,
+    time: new Date().toLocaleString()
+  });
 
-    localStorage.setItem("azraVisitors", JSON.stringify(visitors));
-  
-    localStorage.setItem("azraUserName", currentName);
-    localStorage.setItem("tambayanPreference", currentPref);
+  localStorage.setItem("azraVisitors", JSON.stringify(visitors));
+  localStorage.setItem("azraUserName", currentName);
+  localStorage.setItem("tambayanPreference", currentPref);
+  sessionStorage.setItem("popupShownThisSession", "true");
 
-    sessionStorage.setItem("popupShownThisSession", "true");
+  // ✅ REDIRECT LOGIC
+  if (currentPref === "aircon") {
+    window.location.href = "actambays.html";
 
-    finalMessage.textContent = `Enjoy exploring our website, ${currentName}!`;
-    stepPref.style.display = "none";
-    stepDone.style.display = "block";
-  };
+  } else if (currentPref === "nature") {
+    window.location.href = "naturetambays.html";
+
+  } else if (currentPref === "student-central") {
+    window.location.href = "studentcentral.html";
+
+  } else if (currentPref === "surprise") {
+    const options = [
+      "actambays.html",
+      "naturetambays.html",
+      "studentcentral.html",
+      "central.html" // extra option
+    ];
+
+    const randomIndex = Math.floor(Math.random() * options.length);
+    window.location.href = options[randomIndex];
+  }
+};
 
   closeBtn.onclick = () => {
     popup.style.display = "none";

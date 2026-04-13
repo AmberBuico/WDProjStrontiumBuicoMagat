@@ -12,59 +12,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&family=Gloria+Hallelujah&family=Delius&display=swap" rel="stylesheet">
   
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="AzraHomepage.css">
-    <script src="popup.js"></script>
+    <link rel="stylesheet" href="actambays.css">
 
 </head>
 
 <body>
-
-    <div id="requiredPopup" class="popup-overlay">
-  <div class="popup-box">
-
-    <div id="step-name">
-      <h2>Hello there!</h2>
-      <p>Before you explore, what should Azra call you?</p>
-      <input type="text" id="userName" placeholder="Enter name" required>
-      <button id="toPreference">Next</button>
-    </div>
-
-    <div id="step-preference" style="display:none;">
-      <h2>Nice to meet you!</h2>
-      <h3>What kind of tambayan do you usually like?</h3>
-
-      <label class="option">
-        <input type="radio" name="preference" value="aircon">
-        Tambayan with A/C
-      </label>
-
-      <label class="option">
-        <input type="radio" name="preference" value="nature">
-        Tambayan with Nature
-      </label>
-
-       <label class="option">
-        <input type="radio" name="preference" value="student-central">
-        Tambayan with students
-      </label>
-
-      <label class="option">
-        <input type="radio" name="preference" value="surprise">
-        Anywhere / Surprise me
-      </label>
-
-      <button id="savePreference">Continue</button>
-    </div>
-
-    <div id="step-done" style="display:none;">
-      <h2 id="finalMessage"></h2>
-      <p>Thank you for sharing! Enjoy exploring ✨</p>
-      <button id="closePopup">Enter Site</button>
-    </div>
-
-  </div>
-    
-</div>
 
     <div class="top-bar bg-color-default" id="scroll-header">
         <div class="top-left">
@@ -74,7 +26,6 @@
         <img src="menubar.png" class="top-menu" id="top-menu-icon" onerror="this.onerror=null;this.src='https://placehold.co/60x60/E6B09E/000000?text=☰'">
     </div>
 
-    
     <section class="hero">
 
         <img src="flower.png" class="corner flower" onerror="this.onerror=null;this.src='https://placehold.co/120x120/FFC069/000000?text=FLOWER'">
@@ -103,21 +54,6 @@
       <div class="container">
 
     <div class="columns is-centered is-multiline">
-      <div class="column is-3">
-        <a href="AzraKalachuchi.html" class="card"><img src="kalachuchi.png"></a>
-      </div>
-      <div class="column is-3">
-        <a href="AzraGrandstand.html" class="card"><img src="grandstand.png"></a>
-      </div>
-      <div class="column is-3">
-        <a href="AzraLibrary.html" class="card"><img src="library.png"></a>
-      </div>
-      <div class="column is-3">
-        <a href="AzraGazebos.html" class="card"><img src="gazebos.png"></a>
-      </div>
-    </div>
-
-    <div class="columns is-centered is-multiline">
       <div class="column is-6">
         <a href="AzraGcu.html" class="card rectangle"><img src="gcu.png"></a>
       </div>
@@ -126,27 +62,6 @@
       </div>
       <div class="column is-6">
         <a href="AzraJosiesNook.html" class="card rectangle"><img src="josiesnook.png"></a>
-      </div>
-    </div>
-
-    <div class="columns is-centered is-multiline">
-      <div class="column is-3">
-        <a href="AzraAstb.html" class="card"><img src="astb.png"></a>
-      </div>
-      <div class="column is-6">
-        <a href="AzraSwings.html" class="card semi-rectangle"><img src="swings.png"></a>
-      </div>
-      <div class="column is-3">
-        <a href="AzraBasketball.html" class="card"><img src="basketball.png"></a>
-      </div>
-    </div>
-
-    <div class="columns is-centered is-multiline">
-      <div class="column is-6">
-        <a href="AzraFlob.html" class="card rectangle"><img src="flob.png"></a>
-      </div>
-      <div class="column is-6">
-        <a href="AzraBlob.html" class="card rectangle"><img src="blob.png"></a>
       </div>
     </div>
 
@@ -159,7 +74,7 @@
             <button class="menu-close" id="menu-close-button">X</button>
 
             <nav class="menu-links">
-                <a href="#" class="menu-link-item">azra’s home</a>
+                <a href="AzraHomepage.html" class="menu-link-item">azra’s home</a>
                 <a href="AzraAboutpage.html" class="menu-link-item">about azra</a>
                 <a href="#pasasalamat" class="menu-link-item">pasasalamat</a>
                 <a href="#aircon" class="menu-link-item">aircon!</a>
@@ -169,7 +84,6 @@
             </nav>
         </div>
     </div>
-
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -268,31 +182,6 @@
         });
     </script>
 
-    <script src="popup.js"></script>
-    <p id="azraDialogue">Hi! Welcome!</p>
-    <script>
-document.addEventListener("DOMContentLoaded", function(){
-
-  const azraText = document.getElementById("azraDialogue");
-  if(!azraText) return; // page has no Azra
-
-  const pref = localStorage.getItem("tambayanPreference");
-  const name = localStorage.getItem("azraUserName") || "friend";
-
-  if(pref === "aircon"){
-    azraText.innerText = `Hi ${name}! Mukhang gusto mo ng malamig... try the indoor tambayans ❄️`;
-  }
-  else if(pref === "nature"){
-    azraText.innerText = `Hi ${name}! Perfect weather for outside tambayan 🌿`;
-  }
-  else if(pref === "surprise"){
-    azraText.innerText = `Hi ${name}! Random adventure tayo today 🎲`;
-  }
-  else{
-    azraText.innerText = `Hi ${name}! Pick a place and explore!`;
-  }
-
-});
 </script>
 </body>
 </html>
