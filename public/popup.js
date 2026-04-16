@@ -66,8 +66,7 @@ saveBtn.onclick = () => {
     const options = [
       "actambays.html",
       "naturetambays.html",
-      "studentcentral.html",
-      "central.html" // extra option
+      "sctambays.html",
     ];
 
     const randomIndex = Math.floor(Math.random() * options.length);
